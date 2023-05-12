@@ -1,8 +1,8 @@
-name: ci 
+name: ci
 on:
   push:
     branches:
-      - master 
+      - master
       - main
 permissions:
   contents: write
@@ -16,9 +16,9 @@ jobs:
           python-version: 3.x
       - uses: actions/cache@v3
         with:
-          key: mkdocs-material-${{ github.ref }} 
+          key: mkdocs-material-${{ github.ref }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
