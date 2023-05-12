@@ -1,0 +1,14 @@
+{
+	"cSpell.language": "en",
+    "editor.insertSpaces": false,
+	"files.trimTrailingWhitespace": true,
+	"[markdown]": {
+        "editor.tabSize": 2,
+        "editor.rulers": [80],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+	"[json]": {
+        "editor.tabSize": 2
+    },
+}
