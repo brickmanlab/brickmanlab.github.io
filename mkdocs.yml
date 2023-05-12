@@ -1,0 +1,8 @@
+site_name: Brickman Lab
+theme:
+  name: material
+  logo: BrickmanLab.jpeg
+
+nav:
+ - index.md
+ - nextflow_tower.md
