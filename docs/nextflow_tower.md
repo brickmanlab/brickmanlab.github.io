@@ -21,7 +21,7 @@ according to pipeline and examples can be found in the usage docs:
 
 Use the helper script **nf-core_tower.sh** to run DanGPU nf-core configs with Tower.
 
-``` sh
+``` bash
 cd .local/bin
 
 # Start a new tmux session
@@ -33,13 +33,13 @@ export TOWER_ACCESS_TOKEN=your_access_token
 
 Launch desired nf-core pipeline using helper script. Usage is
 
-``` sh
+``` bash
 sh nf-core_tower.sh RUNNAME nextflow run <OPTIONS>
 ```
 
 As a minimum, the pipeline name, samplesheet location, and genome must be defined, e.g. for rnaseq:
 
-``` sh
+``` bash
 sh nf-core_tower.sh MYPAPER_2023 nextflow run nf-core/rnaseq -r 3.8.1 --input samplesheet.csv --genome mm10
 ```
 
@@ -48,7 +48,7 @@ sh nf-core_tower.sh MYPAPER_2023 nextflow run nf-core/rnaseq -r 3.8.1 --input sa
 The tower cli[^1] is required to be installed only once to connect the DanGPU as a
 computing resource. Afterward, it's not required any more[^2].
 
-``` sh
+``` bash
 # Download the latest version of Tower CLI:
 wget https://github.com/seqeralabs/tower-cli/releases/download/v0.7.3/tw-0.7.3-linux-x86_64
 
