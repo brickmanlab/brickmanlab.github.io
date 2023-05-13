@@ -2,9 +2,9 @@ site_name: Brickman Lab
 repo_url: https://github.com/brickmanlab/wiki
 repo_name: brickmanlab/wiki
 
-nav:
- - index.md
- - nextflow_tower.md
+# nav:
+#  - index.md
+#  - nextflow_tower.md
 
 theme:
   name: material
@@ -32,14 +32,14 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - tables
 
 plugins:
   - search
-  - git-committers:
-      repository: brickmanlab/wiki
-      branch: master
+  - table-reader
   - git-revision-date-localized:
       enable_creation_date: true

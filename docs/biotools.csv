@@ -1,0 +1,8 @@
+﻿Tool,Description,NGS,Language,Link
+rGREAT,Functional enrichment on genomic regions,CHIP-seq,ATAC-seq,R,https://github.com/jokergoo/rGREAT
+scFate,Pseudotime inference,scRNA-seq,Python,https://github.com/LouisFaure/scFates
+scanpy,Single-cell analysis package,scRNA-seq,Python,https://github.com/scverse/scanpy
+scvi-tools,AI probabilistic package for transfer learning, DR and more,scRNA-seq,Python,https://github.com/scverse/scvi-tools
+GSEApy,Gene set enrichment analysis on steroids,scRNA-seq,Python,https://github.com/zqfang/GSEApy
+complex-upset,UpsetR on stereoids (complicated Venn Diagrams),Plotting,R,https://github.com/krassowski/complex-upset
+PyComplexHeatmap,Complex heatmap,Plotting,Python,https://github.com/DingWB/PyComplexHeatmap
