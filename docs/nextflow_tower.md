@@ -21,7 +21,7 @@ according to pipeline and examples can be found in the usage docs:
 
 Use the helper script **nf-core_tower.sh** to run DanGPU nf-core configs with Tower.
 
-```bash
+``` sh
 cd .local/bin
 
 # Start a new tmux session
@@ -33,21 +33,22 @@ export TOWER_ACCESS_TOKEN=your_access_token
 
 Launch desired nf-core pipeline using helper script. Usage is
 
-```bash
+``` sh
 sh nf-core_tower.sh RUNNAME nextflow run <OPTIONS>
 ```
 
 As a minimum, the pipeline name, samplesheet location, and genome must be defined, e.g. for rnaseq:
 
-```bash
+``` sh
 sh nf-core_tower.sh MYPAPER_2023 nextflow run nf-core/rnaseq -r 3.8.1 --input samplesheet.csv --genome mm10
 ```
 
 ## Tower CLI installation
 
-The Tower CLI executable is **already installed** on DanGPU at ./local/bin/
+The tower cli[^1] is required to be installed only once to connect the DanGPU as a
+computing resource. Afterward, it's not required any more[^2].
 
-```bash
+``` sh
 # Download the latest version of Tower CLI:
 wget https://github.com/seqeralabs/tower-cli/releases/download/v0.7.3/tw-0.7.3-linux-x86_64
 
@@ -55,7 +56,5 @@ wget https://github.com/seqeralabs/tower-cli/releases/download/v0.7.3/tw-0.7.3-l
 mkdir ~/.local/bin && mv tw-* tw && chmod +x ~/.local/bin/tw
 ```
 
-## References
-
-- [Tower CLI configuration](https://github.com/seqeralabs/tower-cli/#2-configuration)
-- [Tower Agent](https://help.tower.nf/22.3/agent/)
+[^1]: [Tower CLI configuration](https://github.com/seqeralabs/tower-cli/#2-configuration)
+[^2]: [Tower Agent](https://help.tower.nf/22.3/agent/)

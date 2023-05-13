@@ -1,8 +1,43 @@
 site_name: Brickman Lab
-theme:
-  name: material
-  logo: BrickmanLab.jpeg
+repo_url: https://github.com/brickmanlab/wiki
+repo_name: brickmanlab/wiki
 
 nav:
  - index.md
  - nextflow_tower.md
+
+theme:
+  name: material
+  logo: BrickmanLab.jpeg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+
+plugins:
+  - search
+  - git-authors
+  - git-revision-date-localized:
+      enable_creation_date: true
