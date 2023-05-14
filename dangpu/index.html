@@ -352,6 +352,33 @@
     First time on server
   </a>
   
+    <nav class="md-nav" aria-label="First time on server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-command-to-do-basic-setup-and-logout-afterwards" class="md-nav__link">
+    1. Run the command to do basic setup and logout afterwards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-extra-simlinks-for-folders" class="md-nav__link">
+    2. Create extra simlinks for folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-setup-bash_profile" class="md-nav__link">
+    3. Setup .bash_profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -449,6 +476,33 @@
     First time on server
   </a>
   
+    <nav class="md-nav" aria-label="First time on server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-command-to-do-basic-setup-and-logout-afterwards" class="md-nav__link">
+    1. Run the command to do basic setup and logout afterwards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-extra-simlinks-for-folders" class="md-nav__link">
+    2. Create extra simlinks for folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-setup-bash_profile" class="md-nav__link">
+    3. Setup .bash_profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -484,17 +538,18 @@
 <li><strong>platforms</strong>: <a href="http://dangpu01fl:8989">JupyterHub</a> and <a href="http://dangpu01fl:8787">RStudio</a></li>
 </ul>
 <h2 id="first-time-on-server">First time on server</h2>
-<ol>
-<li>Run the command to do basic setup and logout afterwards</li>
-</ol>
+<h3 id="1-run-the-command-to-do-basic-setup-and-logout-afterwards">1. Run the command to do basic setup and logout afterwards</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/maps/projects/dan1/apps/etc/init_dangpu_env.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export MODULEPATH=/maps/projects/dan1/apps/.modules:\${MODULEPATH}&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bash_profile
 </span></code></pre></div>
-<ol>
-<li>Create extra simlinks for folders</li>
-</ol>
+<h3 id="2-create-extra-simlinks-for-folders">2. Create extra simlinks for folders</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/maps/projects/dan1/people/<span class="nv">$USER</span><span class="w"> </span><span class="nv">$HOME</span>/datadir
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/projects/data/Brickman<span class="w"> </span><span class="nv">$HOME</span>/
+</span></code></pre></div>
+<h3 id="3-setup-bash_profile">3. Setup <code>.bash_profile</code></h3>
+<p>To make your life simple, run the command below. This will give you access to
+extra helper scripts we have developed.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export PATH=/projects/dan1/data/Brickman/helper-scripts/helper-scripts:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bash_profile
 </span></code></pre></div>
 <h2 id="folder-structure">Folder structure</h2>
 
@@ -503,7 +558,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2023</span>
       
         <br>
         Created:
