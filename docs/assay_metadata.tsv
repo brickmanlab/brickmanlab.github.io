@@ -1,0 +1,20 @@
+Metadata field	Definition	Format	ontology	example
+assay_ID	Identifier for the assay that is at least unique within the project	<code_name\>_YYYYMMDD		CHIP_20200101
+assay_type	The type of experiment performed, eg ATAC-seq or seqFISH		ontology field- e.g. EFO or OBI	ChIPseq
+assay_subtype	More specific type or assay like bulk nascent RNAseq or single cell ATACseq		ontology field- e.g. EFO or OBI	bulk ChIPseq
+owner	Owner of the assay (who made the experiment?).	<First Name\> <Last Name\>		Jose Romero
+platform	The type of instrument used to perform the assay, eg Illumina HiSeq 4000 or Fluidigm C1 microfluidics platform		ontology field- e.g. EFO or OBI	Illumina
+extraction_method	Technique used to extract the nucleic acid from the cell		ontology field- e.g. EFO or OBI
+library_method	Technique used to amplify a cDNA library		ontology field- e.g. EFO or OBI
+external accessions	Accession numbers from external resources to which assay or protocol information was submitted		eg protocols.io, AE, GEO accession number, etc	GSEXXXXX
+codename	Internal code name for easy identification (like a keyword)			Oct4_ChIP
+date	Date of assay creation	YYYYMMDD		20200101
+nsamples	Number of samples analyzed in this assay	<integer\>		9
+is_paired	Paired fastq files or not	<single OR paired\>		single
+pipeline	Pipeline used to process data			nf-core/chipseq
+strandedness	The strandedness of the cDNA library	<+ OR - OR *\>		*
+processed_by	Who processed the data	<First Name\> <Last Name\>		Sarah Lundregan
+organism	Organism origin	<Genus species\>		Mus musculus
+origin	If it is internal or external data	<internal OR external\>
+path	Path to files	</path/to/file\>
+short_desc	Short description of the assay	plain text		Oct4 ChIP after pERK activation
