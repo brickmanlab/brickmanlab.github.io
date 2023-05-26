@@ -1,6 +1,6 @@
 # Home
 
-![BrickmanBanner](https://github.com/brickmanlab/.github/blob/master/profile/BrickmanBanner.png)
+![BrickmanBanner](./assets/BrickmanBanner.png)
 
 **Welcome to the Brickman Lab wiki!**
 
