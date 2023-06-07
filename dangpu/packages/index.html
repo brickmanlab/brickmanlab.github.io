@@ -17,7 +17,7 @@
     
     
       
-        <title>Podman - Brickman Lab</title>
+        <title>Packages - Brickman Lab</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#podman" class="md-skip">
+        <a href="#packages" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Podman
+              Packages
             
           </span>
         </div>
@@ -378,12 +378,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Podman
+          Packages
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Podman
+        Packages
       </a>
       
         
@@ -402,16 +402,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#podman" class="md-nav__link">
+    Podman
+  </a>
+  
+    <nav class="md-nav" aria-label="Podman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#running-the-ku-sund-dangpu-nf-core-config-with-podman" class="md-nav__link">
     Running the KU SUND DANGPU nf-core config with Podman
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -457,16 +470,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#podman" class="md-nav__link">
+    Podman
+  </a>
+  
+    <nav class="md-nav" aria-label="Podman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#running-the-ku-sund-dangpu-nf-core-config-with-podman" class="md-nav__link">
     Running the KU SUND DANGPU nf-core config with Podman
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -488,8 +514,9 @@
   
 
 
-<h1 id="podman">Podman</h1>
-<h2 id="setup">Setup</h2>
+<h1 id="packages">Packages</h1>
+<h2 id="podman">Podman</h2>
+<h3 id="setup">Setup</h3>
 <p>Storage for Podman needs to be configured to fix UID errors when running on UTF filesystem:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/containers
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cp<span class="w"> </span>/maps/projects/dan1/apps/podman/4.0.2/storage.conf<span class="w"> </span><span class="nv">$HOME</span>/.config/containers/
@@ -499,7 +526,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>podman<span class="w"> </span>ps
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>podman<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>docker.io/library/busybox
 </span></code></pre></div>
-<h2 id="running-the-ku-sund-dangpu-nf-core-config-with-podman">Running the KU SUND DANGPU nf-core config with Podman</h2>
+<h3 id="running-the-ku-sund-dangpu-nf-core-config-with-podman">Running the KU SUND DANGPU nf-core config with Podman</h3>
 <p>Currently this is not practical because file permissions cause the following error:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>error during container init: error setting cgroup config for procHooks process: cannot set memory limit: container could not join or create cgroup
 </span></code></pre></div>
@@ -513,7 +540,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2023</span>
       
         <br>
         Created:

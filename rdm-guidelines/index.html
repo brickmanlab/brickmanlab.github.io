@@ -560,7 +560,7 @@
   
     <li class="md-nav__item">
       <a href="../dangpu/packages/" class="md-nav__link">
-        Podman
+        Packages
       </a>
     </li>
   
@@ -790,21 +790,18 @@
 <h2 id="1-folder-structure-and-organization">1. Folder structure and organization</h2>
 <p>To ensure efficient data management, it is important to establish a consistent approach to organizing research data. We consider the following practices:</p>
 <ul>
-<li>Folder structure: we aim to a logical and intuitive folder structure that reflects the organization of research projects and experimental data. We use Use descriptive folder names to make it easy to locate and access specific data files.</li>
+<li>Folder structure: we aim to a logical and intuitive folder structure that reflects the organization of research projects and experimental data. We use descriptive folder names to make it easy to locate and access specific data files.</li>
 <li>Subfolders: Use subfolders to further categorize data based on their contents, such as code notebooks, results, reports, etc. This helps to keep data organized and facilitates quick retrieval.</li>
-<li>File naming conventions: Implement a standardized file naming convention to ensure consistency and clarity. Use descriptive names that include relevant information, such as type of plots, results tables, etc.</li>
+<li>File naming conventions: implement a standardized file naming convention to ensure consistency and clarity. Use descriptive names that include relevant information, such as type of plots, results tables, etc.</li>
 </ul>
 <h3 id="11-template-engine">1.1 Template engine</h3>
-<p>We are currently using <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>
-to generate a <a href="https://github.com/brickmanlab/project-template">folder structure</a>.
-There is another alternative called <a href="https://github.com/cruft/cruft">cruft</a> which
-allows us to validate and sync old templates with the latest. I think this could
-be a better alternative to cookiecutter.</p>
-<!-- **Note:** I think cruft sounds very useful if we might change the project template in future. Is it as easy to use as cookiecutter when just routinely creating the project folder (should be easy to use for all members of the lab)? -->
-
+<p>We are currently using a <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>
+template to generate a <a href="https://github.com/brickmanlab/ngs-template">folder structure</a>.
+Use <a href="https://github.com/cruft/cruft">cruft</a> when generating assay and project folders to
+allow us to validate and sync old templates with the latest version.</p>
 <h3 id="12-assay-folder">1.2 Assay folder</h3>
-<p>There should be an <code>Assays</code> folder that will contain all experimental datasets (raw files and pipeline processed files).
-Inside <code>Assays</code> there will be subfolders named after a unique NGS ID and the date it was created:</p>
+<p>For each NGS experiment there should be an <code>Assay</code> folder that will contain all experimental datasets (raw files and pipeline processed files).
+Inside <code>Assay</code> there will be subfolders named after a unique NGS ID and the date it was created:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;Assay-ID&gt;_YYYYMMDD
 </span></code></pre></div>
 <h4 id="assay-id-code-names">Assay ID code names</h4>
@@ -832,15 +829,13 @@ Inside <code>Assays</code> there will be subfolders named after a unique NGS ID 
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">   </span>└──<span class="w"> </span>samplesheet.csv
 </span></code></pre></div>
 <ul>
-<li><strong>description.yaml</strong>: longer description of the assay in yaml format.</li>
-<li><strong>metadata.yaml</strong>: metadata file of the assay describing different keys (<a href="#21-assay-metadata-fields">see below</a>).</li>
+<li><strong>description.yaml</strong>: short and long descriptions of the assay in yaml format.</li>
+<li><strong>metadata.yaml</strong>: metadata file for the assay describing different keys (<a href="#21-assay-metadata-fields">see below</a>).</li>
 <li><strong>pipeline.md</strong>: description of the pipeline used to process raw data.</li>
 <li><strong>processed</strong>: folder with results of the preprocessing pipeline. Contents depend on the pipeline used.</li>
-<li><strong>raw</strong>: folder with the raw data.<ul>
+<li><strong>raw</strong>: folder with the raw data.</li>
 <li><em>.fastq.gz</em>:In the case of NGS assays, there should be fastq files.</li>
 <li><em>samplesheet.csv</em>: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.</li>
-</ul>
-</li>
 </ul>
 <h3 id="13-project-folder">1.3 Project folder</h3>
 <p>There should be another folder called <code>Projects</code> that will contain project information and data analysis.</p>
@@ -849,9 +844,7 @@ to a publication.</p>
 <p>The project folder should be named after a unique identifier, such as:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;Project-ID&gt;_YYYYMMDD
 </span></code></pre></div>
-<p><code>&lt;Project-ID&gt;</code> might consist on the acronym of the owner of the project folder such as <code>JARH_20230101</code>.</p>
-<!-- **Note:** I think this system might not be ideal, any other suggestion? -->
-
+<p><code>&lt;Project-ID&gt;</code> should be the surname of the owner of the project folder and the publication year, e.g. <code>JARH_etal_20230101</code>.</p>
 <h4 id="folder-structure_1"><strong>Folder structure</strong></h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;Project-ID&gt;_20230424
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>data
@@ -869,23 +862,22 @@ to a publication.</p>
 </span></code></pre></div>
 <ul>
 <li><strong>data</strong>: folder that contains symlinks or shortcuts to where the data is, avoiding copying and modification of original files.</li>
-<li><strong>documents</strong>: folder containing word documents, slides or pdfs related to the project, such as explanations on the data or project, papers, etc.</li>
-<li><strong>notebooks</strong>: folder containing jupyter notebooks, R markdown or Quarto files with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes.</li>
-<li><strong>README.md</strong>: description of the project in markdown format.</li>
-<li><strong>reports</strong>: notebooks can be knitted or transformed into html/docx/pdfs versions ideal for sharing with colleagues and also have a formal report of the data analysis procedure.</li>
-<li><em>figures</em>: each knitted document might produce figures. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so you know which notebook created which images.</li>
-<li><strong>results</strong>: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so you know which notebook created which results.</li>
+<li><strong>documents</strong>: folder containing word documents, slides or pdfs related to the project, such as explanations of the data or project, papers, etc.</li>
+<li><strong>notebooks</strong>: folder containing Jupyter, R markdown or Quarto notebooks with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes. Notebooks should be labeled numerically in order they were created e.g. <code>00_preprocessing</code></li>
+<li><strong>README.md</strong>: detailed description of the project in markdown format.</li>
+<li><strong>reports</strong>: notebooks rendered as html/docx/pdf versions, ideal for sharing with colleagues and also as a formal report of the data analysis procedure.</li>
+<li><em>figures</em>: figures produced upon rendering notebooks. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which figures.</li>
+<li><strong>results</strong>: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which results.</li>
 <li><strong>scripts</strong>: folder containing helper scripts needed to run data analysis or reproduce the work of the folder</li>
 </ul>
 <!-- **Note**: maybe we can make an environment folder or put inside the scripts folder a Dockerfile that should give you an environment where you can reproduce the results of the folder? -->
 
 <!-- **Note2**: shouldn't there be also a project_metadata.yaml here as well? also a project_description.yaml too? -->
-<!-- **Note3**: I guess this info would be contained in the README.md? The README/project_description could direct the reader to the the project_metadata.yaml in the assays folder. Will there be a separate project_metadata.yaml for each dataset used (e.g. if both CHIPseq and RNAseq are used in a given project) or a single project_metadata.yaml with metatadata for all datasets used in the project? -->
 
 <h3 id="14-synchronization-with-dangpu-server">1.4 Synchronization with DanGPU server</h3>
 <p>We will have to setup a cron job to perform one-way sync between the <code>/projects</code>
 folder and <code>NGS_data</code> folder. All the analysis will be done on danGPU server,
-with no <strong>exceptions</strong>!</p>
+with <strong>no exceptions</strong>!</p>
 <p>After project is done and published, it will be moved to <code>NGS_data</code>.</p>
 <h3 id="15-general-naming-conventions-and-more-info">1.5 General naming conventions and more info</h3>
 <ul>
@@ -1049,16 +1041,12 @@ with no <strong>exceptions</strong>!</p>
 <h3 id="22-project-metadata-fields">2.2 Project metadata fields</h3>
 <p>In development.</p>
 <h2 id="3-data-management-catalogue">3. Data management catalogue</h2>
-<p>@SLundregan has already build a prototype for NGS_data folder. We could do the
-same for the assays, this way we can make a quick decisions on which assays to
-to combine when publishing papers.</p>
-<p>Since assays will follow a folder structure, we could just traverse all the
-folders and combine <code>description.yaml</code> and <code>metadata.yaml</code>. Better solution
-would be to have a database, but that's an extra complexity on top.</p>
+<p>@SLundregan is in the process of building a prototype for <code>Assay</code>, using the metadata contained in all <code>description.yml</code> and <code>metadata.yml</code> files in the assay folder.
+This will be in the form of an SQLite database that that is easily updatable by running a helper script.</p>
 <h2 id="4-database-browser">4. Database browser</h2>
 <p>@SLundregan is also working on a browsable database using <a href="https://panel.holoviz.org/">Panel python app</a>.
-Ideally, the app will be able to display the database of Assays and/or Projects. Clicking on an item from the database
-will let you open a tab to read the description of the project/assay.</p>
+The app will display the latest version of the SQLite database. Clicking on an item from the database
+will open a tab containing all available metadata for the assay.</p>
 <p>Also, it would be nice if you can create an <code>Assay</code> folder directly from there,
 making it easy to fill up the info for the metadata and GEO submission (<a href="#8-data-upload-to-geo">see below</a>)</p>
 <p>In the future, you could ideally visualize an analysed single cell RNAseq dataset by opening <a href="https://cirrocumulus.readthedocs.io/en/latest/">Cirrocumulus</a> session.</p>
@@ -1085,7 +1073,7 @@ This template will contain all the necessary information regarding common practi
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2023</span>
       
         <br>
         Created:
