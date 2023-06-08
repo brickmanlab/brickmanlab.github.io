@@ -16,24 +16,21 @@ This section provides guidelines for effective research data management within o
 
 To ensure efficient data management, it is important to establish a consistent approach to organizing research data. We consider the following practices:
 
-- Folder structure: we aim to a logical and intuitive folder structure that reflects the organization of research projects and experimental data. We use Use descriptive folder names to make it easy to locate and access specific data files.
+- Folder structure: we aim to a logical and intuitive folder structure that reflects the organization of research projects and experimental data. We use descriptive folder names to make it easy to locate and access specific data files.
 - Subfolders: Use subfolders to further categorize data based on their contents, such as code notebooks, results, reports, etc. This helps to keep data organized and facilitates quick retrieval.
-- File naming conventions: Implement a standardized file naming convention to ensure consistency and clarity. Use descriptive names that include relevant information, such as type of plots, results tables, etc.
+- File naming conventions: implement a standardized file naming convention to ensure consistency and clarity. Use descriptive names that include relevant information, such as type of plots, results tables, etc.
 
 ### 1.1 Template engine
 
-We are currently using [cookiecutter](https://github.com/cookiecutter/cookiecutter)
-to generate a [folder structure](https://github.com/brickmanlab/project-template).
-There is another alternative called [cruft](https://github.com/cruft/cruft) which
-allows us to validate and sync old templates with the latest. I think this could
-be a better alternative to cookiecutter.
-
-<!-- **Note:** I think cruft sounds very useful if we might change the project template in future. Is it as easy to use as cookiecutter when just routinely creating the project folder (should be easy to use for all members of the lab)? -->
+We are currently using a [cookiecutter](https://github.com/cookiecutter/cookiecutter)
+template to generate a [folder structure](https://github.com/brickmanlab/ngs-template).
+Use [cruft](https://github.com/cruft/cruft) when generating assay and project folders to
+allow us to validate and sync old templates with the latest version.
 
 ### 1.2 Assay folder
 
-There should be an `Assays` folder that will contain all experimental datasets (raw files and pipeline processed files).
-Inside `Assays` there will be subfolders named after a unique NGS ID and the date it was created:
+For each NGS experiment there should be an `Assay` folder that will contain all experimental datasets (raw files and pipeline processed files).
+Inside `Assay` there will be subfolders named after a unique NGS ID and the date it was created:
 
 ```bash
 <Assay-ID>_YYYYMMDD
@@ -67,13 +64,13 @@ CHIP_20230424
    └── samplesheet.csv
 ```
 
-- **description.yaml**: longer description of the assay in yaml format.
-- **metadata.yaml**: metadata file of the assay describing different keys ([see below](#21-assay-metadata-fields)).
+- **description.yaml**: short and long descriptions of the assay in yaml format.
+- **metadata.yaml**: metadata file for the assay describing different keys ([see below](#21-assay-metadata-fields)).
 - **pipeline.md**: description of the pipeline used to process raw data.
 - **processed**: folder with results of the preprocessing pipeline. Contents depend on the pipeline used.
 - **raw**: folder with the raw data.
-    - *.fastq.gz*:In the case of NGS assays, there should be fastq files.
-    - *samplesheet.csv*: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.
+  - *.fastq.gz*:In the case of NGS assays, there should be fastq files.
+  - *samplesheet.csv*: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.
 
 ### 1.3 Project folder
 
@@ -88,9 +85,7 @@ The project folder should be named after a unique identifier, such as:
 <Project-ID>_YYYYMMDD
 ```
 
-`<Project-ID>` might consist on the acronym of the owner of the project folder such as `JARH_20230101`.
-
-<!-- **Note:** I think this system might not be ideal, any other suggestion? -->
+`<Project-ID>` should be the surname of the owner of the project folder and the publication year, e.g. `JARH_etal_20230101`.
 
 #### **Folder structure**
 
@@ -111,24 +106,23 @@ The project folder should be named after a unique identifier, such as:
 ```
 
 - **data**: folder that contains symlinks or shortcuts to where the data is, avoiding copying and modification of original files.
-- **documents**: folder containing word documents, slides or pdfs related to the project, such as explanations on the data or project, papers, etc.
-- **notebooks**: folder containing jupyter notebooks, R markdown or Quarto files with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes.
-- **README.md**: description of the project in markdown format.
-- **reports**: notebooks can be knitted or transformed into html/docx/pdfs versions ideal for sharing with colleagues and also have a formal report of the data analysis procedure.
-- *figures*: each knitted document might produce figures. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so you know which notebook created which images.
-- **results**: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so you know which notebook created which results.
+- **documents**: folder containing word documents, slides or pdfs related to the project, such as explanations of the data or project, papers, etc.
+- **notebooks**: folder containing Jupyter, R markdown or Quarto notebooks with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes. Notebooks should be labeled numerically in order they were created e.g. `00_preprocessing`
+- **README.md**: detailed description of the project in markdown format.
+- **reports**: notebooks rendered as html/docx/pdf versions, ideal for sharing with colleagues and also as a formal report of the data analysis procedure.
+- *figures*: figures produced upon rendering notebooks. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which figures.
+- **results**: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which results.
 - **scripts**: folder containing helper scripts needed to run data analysis or reproduce the work of the folder
 
 <!-- **Note**: maybe we can make an environment folder or put inside the scripts folder a Dockerfile that should give you an environment where you can reproduce the results of the folder? -->
 
 <!-- **Note2**: shouldn't there be also a project_metadata.yaml here as well? also a project_description.yaml too? -->
-<!-- **Note3**: I guess this info would be contained in the README.md? The README/project_description could direct the reader to the the project_metadata.yaml in the assays folder. Will there be a separate project_metadata.yaml for each dataset used (e.g. if both CHIPseq and RNAseq are used in a given project) or a single project_metadata.yaml with metatadata for all datasets used in the project? -->
 
 ### 1.4 Synchronization with DanGPU server
 
 We will have to setup a cron job to perform one-way sync between the `/projects`
 folder and `NGS_data` folder. All the analysis will be done on danGPU server,
-with no **exceptions**!
+with **no exceptions**!
 
 After project is done and published, it will be moved to `NGS_data`.
 
@@ -157,19 +151,14 @@ In development.
 
 ## 3. Data management catalogue
 
-@SLundregan has already build a prototype for NGS_data folder. We could do the
-same for the assays, this way we can make a quick decisions on which assays to
-to combine when publishing papers.
-
-Since assays will follow a folder structure, we could just traverse all the
-folders and combine `description.yaml` and `metadata.yaml`. Better solution
-would be to have a database, but that's an extra complexity on top.
+@SLundregan is in the process of building a prototype for `Assay`, using the metadata contained in all `description.yml` and `metadata.yml` files in the assay folder.
+This will be in the form of an SQLite database that that is easily updatable by running a helper script.
 
 ## 4. Database browser
 
 @SLundregan is also working on a browsable database using [Panel python app](https://panel.holoviz.org/).
-Ideally, the app will be able to display the database of Assays and/or Projects. Clicking on an item from the database
-will let you open a tab to read the description of the project/assay.
+The app will display the latest version of the SQLite database. Clicking on an item from the database
+will open a tab containing all available metadata for the assay.
 
 Also, it would be nice if you can create an `Assay` folder directly from there,
 making it easy to fill up the info for the metadata and GEO submission ([see below](#8-data-upload-to-geo))
