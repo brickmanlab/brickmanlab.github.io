@@ -16,30 +16,56 @@ MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 srun -N 1 --ntasks-per-node=10 --gres=gpu:2 --pty bash
 module load miniconda/latest
 source activate /maps/projects/dan1/data/Brickman/conda_envs/af2
-cd ~/projects/data/Brickman/alphafold
+
+cd /maps/projects/dan1/data/Brickman/alphafold
+export AF2_DATA_DIR="~/projects/data/Alphafold2/24022023"
 ```
 
-### 1.3. Run cli
+### 1.3. Run monomer (cli)
 
 ```bash
 python run_alphafold.py \
---fasta_paths=~/projects/data/Brickman/target_01.fasta \
---output_dir=/scratch/tmp/alphatest \
---model_preset=monomer \
---db_preset=full_dbs \
---data_dir=~/projects/data/Alphafold2/24022023 \
---uniref30_database_path=~/projects/data/Alphafold2/24022023/uniref30/UniRef30_2021_03 \
---uniref90_database_path=~/projects/data/Alphafold2/24022023/uniref90/uniref90.fasta \
---mgnify_database_path=~/projects/data/Alphafold2/24022023/mgnify/mgy_clusters_2022_05.fa \
---pdb70_database_path=~/projects/data/Alphafold2/24022023/pdb70/pdb70 \
---template_mmcif_dir=~/projects/data/Alphafold2/24022023/pdb_mmcif/mmcif_files/ \
---obsolete_pdbs_path=~/projects/data/Alphafold2/24022023/pdb_mmcif/obsolete.dat \
---bfd_database_path=~/projects/data/Alphafold2/24022023/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
---max_template_date=2022-01-01 \
---use_gpu_relax
+    --fasta_paths=~/projects/data/Brickman/target_01.fasta \
+    --output_dir=/scratch/tmp/alphatest \
+    --model_preset=monomer \
+    --db_preset=full_dbs \
+    --data_dir=$AF2_DATA_DIR \
+    --uniref30_database_path=$AF2_DATA_DIR/uniref30/UniRef30_2021_03 \
+    --uniref90_database_path=$AF2_DATA_DIR/uniref90/uniref90.fasta \
+    --mgnify_database_path=$AF2_DATA_DIR/mgnify/mgy_clusters_2022_05.fa \
+    --pdb70_database_path=$AF2_DATA_DIR/pdb70/pdb70 \
+    --template_mmcif_dir=$AF2_DATA_DIR/pdb_mmcif/mmcif_files/ \
+    --obsolete_pdbs_path=$AF2_DATA_DIR/pdb_mmcif/obsolete.dat \
+    --bfd_database_path=$AF2_DATA_DIR/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    --max_template_date=2022-01-01 \
+    --use_gpu_relax
 ```
 
-### 1.4. Example SBATCH script
+### 1.4. Run multimer (cli)
+
+The example below generates **10 models**.
+
+```bash
+python run_alphafold.py \
+    --fasta_paths=/home/fdb589/projects/data/Brickman/WTPU_1_WTC_EBPa.fasta \
+    --output_dir=/scratch/tmp/alphatest \
+    --model_preset=multimer \
+    --db_preset=full_dbs \
+    --data_dir=$AF2_DATA_DIR \
+    --uniref30_database_path=$AF2_DATA_DIR/uniref30/UniRef30_2021_03 \
+    --uniref90_database_path=$AF2_DATA_DIR/uniref90/uniref90.fasta \
+    --mgnify_database_path=$AF2_DATA_DIR/mgnify/mgy_clusters_2022_05.fa \
+    --template_mmcif_dir=$AF2_DATA_DIR/pdb_mmcif/mmcif_files/ \
+    --obsolete_pdbs_path=$AF2_DATA_DIR/pdb_mmcif/obsolete.dat \
+    --pdb_seqres_database_path=$AF2_DATA_DIR/pdb_seqres/pdb_seqres.txt \
+    --uniprot_database_path=$AF2_DATA_DIR/uniprot/uniprot.fasta \
+    --bfd_database_path=$AF2_DATA_DIR/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    --max_template_date=2022-01-01 \
+    --num_multimer_predictions_per_model=10 \
+    --use_gpu_relax
+```
+
+### 1.5. Example SBATCH script
 
 ```bash
 #!/bin/bash
@@ -53,20 +79,21 @@ module load miniconda/latest
 source activate af2
 cd ~/projects/data/Brickman/alphafold
 mkdir -p /scratch/tmp/alphatest
+export AF2_DATA_DIR="~/projects/data/Alphafold2/24022023"
 
 srun python run_alphafold.py \
 --fasta_paths=~/projects/data/Brickman/target_01.fasta \
 --output_dir=/scratch/tmp/alphatest \
 --model_preset=monomer \
 --db_preset=full_dbs \
---data_dir=~/projects/data/Alphafold2/24022023 \
---uniref30_database_path=~/projects/data/Alphafold2/24022023/uniref30/UniRef30_2021_03 \
---uniref90_database_path=~/projects/data/Alphafold2/24022023/uniref90/uniref90.fasta \
---mgnify_database_path=~/projects/data/Alphafold2/24022023/mgnify/mgy_clusters_2022_05.fa \
---pdb70_database_path=~/projects/data/Alphafold2/24022023/pdb70/pdb70 \
---template_mmcif_dir=~/projects/data/Alphafold2/24022023/pdb_mmcif/mmcif_files/ \
---obsolete_pdbs_path=~/projects/data/Alphafold2/24022023/pdb_mmcif/obsolete.dat \
---bfd_database_path=~/projects/data/Alphafold2/24022023/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+--data_dir=$AF2_DATA_DIR \
+--uniref30_database_path=$AF2_DATA_DIR/uniref30/UniRef30_2021_03 \
+--uniref90_database_path=$AF2_DATA_DIR/uniref90/uniref90.fasta \
+--mgnify_database_path=$AF2_DATA_DIR/mgnify/mgy_clusters_2022_05.fa \
+--pdb70_database_path=$AF2_DATA_DIR/pdb70/pdb70 \
+--template_mmcif_dir=$AF2_DATA_DIR/pdb_mmcif/mmcif_files/ \
+--obsolete_pdbs_path=$AF2_DATA_DIR/pdb_mmcif/obsolete.dat \
+--bfd_database_path=$AF2_DATA_DIR/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
 --max_template_date=2022-01-01 \
 --use_gpu_relax
 ```
