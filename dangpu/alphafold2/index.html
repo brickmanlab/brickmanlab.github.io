@@ -384,15 +384,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-run-cli" class="md-nav__link">
-    1.3. Run cli
+  <a href="#13-run-monomer-cli" class="md-nav__link">
+    1.3. Run monomer (cli)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-example-sbatch-script" class="md-nav__link">
-    1.4. Example SBATCH script
+  <a href="#14-run-multimer-cli" class="md-nav__link">
+    1.4. Run multimer (cli)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-example-sbatch-script" class="md-nav__link">
+    1.5. Example SBATCH script
   </a>
   
 </li>
@@ -535,15 +542,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-run-cli" class="md-nav__link">
-    1.3. Run cli
+  <a href="#13-run-monomer-cli" class="md-nav__link">
+    1.3. Run monomer (cli)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-example-sbatch-script" class="md-nav__link">
-    1.4. Example SBATCH script
+  <a href="#14-run-multimer-cli" class="md-nav__link">
+    1.4. Run multimer (cli)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-example-sbatch-script" class="md-nav__link">
+    1.5. Example SBATCH script
   </a>
   
 </li>
@@ -609,88 +623,111 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>srun<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">10</span><span class="w"> </span>--gres<span class="o">=</span>gpu:2<span class="w"> </span>--pty<span class="w"> </span>bash
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda_envs/af2
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">cd</span><span class="w"> </span>~/projects/data/Brickman/alphafold
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">cd</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/alphafold
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AF2_DATA_DIR</span><span class="o">=</span><span class="s2">&quot;~/projects/data/Alphafold2/24022023&quot;</span>
 </span></code></pre></div>
-<h3 id="13-run-cli">1.3. Run cli</h3>
+<h3 id="13-run-monomer-cli">1.3. Run monomer (cli)</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>run_alphafold.py<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>--fasta_paths<span class="o">=</span>~/projects/data/Brickman/target_01.fasta<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>--output_dir<span class="o">=</span>/scratch/tmp/alphatest<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>--model_preset<span class="o">=</span>monomer<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--db_preset<span class="o">=</span>full_dbs<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>--data_dir<span class="o">=</span>~/projects/data/Alphafold2/24022023<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>--uniref30_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/uniref30/UniRef30_2021_03<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>--uniref90_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/uniref90/uniref90.fasta<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>--mgnify_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/mgnify/mgy_clusters_2022_05.fa<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>--pdb70_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb70/pdb70<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>--template_mmcif_dir<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb_mmcif/mmcif_files/<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>--obsolete_pdbs_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb_mmcif/obsolete.dat<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>--bfd_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>--max_template_date<span class="o">=</span><span class="m">2022</span>-01-01<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>--use_gpu_relax
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>--fasta_paths<span class="o">=</span>~/projects/data/Brickman/target_01.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--output_dir<span class="o">=</span>/scratch/tmp/alphatest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>--model_preset<span class="o">=</span>monomer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>--db_preset<span class="o">=</span>full_dbs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span>--data_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>--uniref30_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref30/UniRef30_2021_03<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>--uniref90_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref90/uniref90.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>--mgnify_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/mgnify/mgy_clusters_2022_05.fa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span>--pdb70_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb70/pdb70<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>--template_mmcif_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/mmcif_files/<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>--obsolete_pdbs_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/obsolete.dat<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>--bfd_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span>--max_template_date<span class="o">=</span><span class="m">2022</span>-01-01<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>--use_gpu_relax
 </span></code></pre></div>
-<h3 id="14-example-sbatch-script">1.4. Example SBATCH script</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">#SBATCH --job-name=AF2</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">#SBATCH --gres=gpu:2</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#SBATCH --cpus-per-task=10</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#SBATCH --mail-type=BEGIN,END</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">#SBATCH --mail-user=YOUR-EMAIL</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>af2
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">cd</span><span class="w"> </span>~/projects/data/Brickman/alphafold
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/scratch/tmp/alphatest
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>srun<span class="w"> </span>python<span class="w"> </span>run_alphafold.py<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>--fasta_paths<span class="o">=</span>~/projects/data/Brickman/target_01.fasta<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>--output_dir<span class="o">=</span>/scratch/tmp/alphatest<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>--model_preset<span class="o">=</span>monomer<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>--db_preset<span class="o">=</span>full_dbs<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>--data_dir<span class="o">=</span>~/projects/data/Alphafold2/24022023<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>--uniref30_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/uniref30/UniRef30_2021_03<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>--uniref90_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/uniref90/uniref90.fasta<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>--mgnify_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/mgnify/mgy_clusters_2022_05.fa<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>--pdb70_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb70/pdb70<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>--template_mmcif_dir<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb_mmcif/mmcif_files/<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>--obsolete_pdbs_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/pdb_mmcif/obsolete.dat<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>--bfd_database_path<span class="o">=</span>~/projects/data/Alphafold2/24022023/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>--max_template_date<span class="o">=</span><span class="m">2022</span>-01-01<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>--use_gpu_relax
+<h3 id="14-run-multimer-cli">1.4. Run multimer (cli)</h3>
+<p>The example below generates <strong>10 models</strong>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>run_alphafold.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--fasta_paths<span class="o">=</span>/home/fdb589/projects/data/Brickman/WTPU_1_WTC_EBPa.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>--output_dir<span class="o">=</span>/scratch/tmp/alphatest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>--model_preset<span class="o">=</span>multimer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>--db_preset<span class="o">=</span>full_dbs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span>--data_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span>--uniref30_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref30/UniRef30_2021_03<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span>--uniref90_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref90/uniref90.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span>--mgnify_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/mgnify/mgy_clusters_2022_05.fa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span>--template_mmcif_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/mmcif_files/<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span>--obsolete_pdbs_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/obsolete.dat<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span>--pdb_seqres_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_seqres/pdb_seqres.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span>--uniprot_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniprot/uniprot.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span>--bfd_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span>--max_template_date<span class="o">=</span><span class="m">2022</span>-01-01<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span>--num_multimer_predictions_per_model<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span>--use_gpu_relax
+</span></code></pre></div>
+<h3 id="15-example-sbatch-script">1.5. Example SBATCH script</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#SBATCH --job-name=AF2</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#SBATCH --gres=gpu:2</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#SBATCH --cpus-per-task=10</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#SBATCH --mail-type=BEGIN,END</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#SBATCH --mail-user=YOUR-EMAIL</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>af2
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">cd</span><span class="w"> </span>~/projects/data/Brickman/alphafold
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/scratch/tmp/alphatest
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AF2_DATA_DIR</span><span class="o">=</span><span class="s2">&quot;~/projects/data/Alphafold2/24022023&quot;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>srun<span class="w"> </span>python<span class="w"> </span>run_alphafold.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>--fasta_paths<span class="o">=</span>~/projects/data/Brickman/target_01.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>--output_dir<span class="o">=</span>/scratch/tmp/alphatest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>--model_preset<span class="o">=</span>monomer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>--db_preset<span class="o">=</span>full_dbs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>--data_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>--uniref30_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref30/UniRef30_2021_03<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>--uniref90_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/uniref90/uniref90.fasta<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>--mgnify_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/mgnify/mgy_clusters_2022_05.fa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>--pdb70_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb70/pdb70<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>--template_mmcif_dir<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/mmcif_files/<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>--obsolete_pdbs_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/pdb_mmcif/obsolete.dat<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>--bfd_database_path<span class="o">=</span><span class="nv">$AF2_DATA_DIR</span>/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>--max_template_date<span class="o">=</span><span class="m">2022</span>-01-01<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>--use_gpu_relax
 </span></code></pre></div>
 <h2 id="2-installation">2. Installation</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda_envs/af2<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda_envs/af2
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>mamba<span class="w"> </span>install<span class="w"> </span>hmmer
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>pip<span class="w"> </span>install<span class="w"> </span>py3dmol
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>mamba<span class="w"> </span>install<span class="w"> </span><span class="nv">pdbfixer</span><span class="o">==</span><span class="m">1</span>.7
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">openmm</span><span class="o">=</span><span class="m">7</span>.5.1
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">cd</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>main<span class="w"> </span>https://github.com/deepmind/alphafold<span class="w"> </span>alphafold
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>./alphafold/requirements.txt
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-dependencies<span class="w"> </span>./alphafold
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1"># stereo chemical props needs to be in common folder</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>wget<span class="w"> </span>–q<span class="w"> </span>–P<span class="w">  </span>/maps/projects/dan1/data/Brickman/alphafold/alphafold/common/<span class="w"> </span>https://git.scicore.unibas.ch/schwede/openstructure/-/raw/7102c63615b64735c4941278d92b554ec94415f8/modules/mol/alg/src/stereo_chemical_props.txt
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># skipping content part</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>./alphafold/data/params<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./alphafold/data/params
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>wget<span class="w"> </span>https://storage.googleapis.com/alphafold/alphafold_params_colab_2022-12-06.tar
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>tar<span class="w"> </span>--extract<span class="w"> </span>--verbose<span class="w"> </span>--preserve-permissions<span class="w"> </span>--file<span class="w"> </span>alphafold_params_colab_2022-12-06.tar
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>pip<span class="w"> </span>install<span class="w"> </span>ipykernel<span class="w"> </span>ipywidgets<span class="w"> </span>tqdm
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>scprep<span class="w"> </span>phate
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c1"># Install jax</span>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>module<span class="w"> </span>load<span class="w"> </span>cuda/11.4<span class="w"> </span>cudnn/8.2.2
-</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s1">&#39;3&#39;</span>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;jax[cuda11_cudnn82]&quot;</span><span class="w"> </span>-f<span class="w"> </span>https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
-</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1"># fix last issues</span>
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>hhsuite
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>kalign3
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.21.6
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda_envs/af2<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda_envs/af2
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>mamba<span class="w"> </span>install<span class="w"> </span>hmmer
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>pip<span class="w"> </span>install<span class="w"> </span>py3dmol
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>mamba<span class="w"> </span>install<span class="w"> </span><span class="nv">pdbfixer</span><span class="o">==</span><span class="m">1</span>.7
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">openmm</span><span class="o">=</span><span class="m">7</span>.5.1
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">cd</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>main<span class="w"> </span>https://github.com/deepmind/alphafold<span class="w"> </span>alphafold
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>./alphafold/requirements.txt
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-dependencies<span class="w"> </span>./alphafold
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># stereo chemical props needs to be in common folder</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>wget<span class="w"> </span>–q<span class="w"> </span>–P<span class="w">  </span>/maps/projects/dan1/data/Brickman/alphafold/alphafold/common/<span class="w"> </span>https://git.scicore.unibas.ch/schwede/openstructure/-/raw/7102c63615b64735c4941278d92b554ec94415f8/modules/mol/alg/src/stereo_chemical_props.txt
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># skipping content part</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>./alphafold/data/params<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./alphafold/data/params
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>wget<span class="w"> </span>https://storage.googleapis.com/alphafold/alphafold_params_colab_2022-12-06.tar
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>tar<span class="w"> </span>--extract<span class="w"> </span>--verbose<span class="w"> </span>--preserve-permissions<span class="w"> </span>--file<span class="w"> </span>alphafold_params_colab_2022-12-06.tar
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>pip<span class="w"> </span>install<span class="w"> </span>ipykernel<span class="w"> </span>ipywidgets<span class="w"> </span>tqdm
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>scprep<span class="w"> </span>phate
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1"># Install jax</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>module<span class="w"> </span>load<span class="w"> </span>cuda/11.4<span class="w"> </span>cudnn/8.2.2
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s1">&#39;3&#39;</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;jax[cuda11_cudnn82]&quot;</span><span class="w"> </span>-f<span class="w"> </span>https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="c1"># fix last issues</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>hhsuite
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>kalign3
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.21.6
 </span></code></pre></div>
 <h3 id="21-download-references">2.1. Download references</h3>
 <div class="admonition note">
@@ -698,20 +735,20 @@
 <p>Downloading references will not work on one try, had to do a lot of manual
 re-running of scripts.</p>
 </div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># create folder</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projects/data/Alphafold2/24022023
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>~/projects/data/Alphafold2/24022023
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Download all databases</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>sh<span class="w"> </span>download_all_data.sh<span class="w"> </span>~/projects/data/Alphafold2/24022023/<span class="w"> </span>&gt;<span class="w"> </span>download.log<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>download_all.log
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Some fix-ups</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># mmCIF will not work because the firewall blocks the port, so I found this workaroud online</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># ref: https://github.com/deepmind/alphafold/issues/196</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>wget<span class="w"> </span>-e<span class="w"> </span><span class="nv">robots</span><span class="o">=</span>off<span class="w"> </span>-r<span class="w"> </span>--no-parent<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">7</span><span class="w"> </span>-q<span class="w"> </span>ftp://ftp.ebi.ac.uk/pub/databases/pdb/data/structures/divided/mmCIF/<span class="w"> </span>-P<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">RAW_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># Last step is to fix all the permissions</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="m">24022023</span>/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># create folder</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projects/data/Alphafold2/24022023
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">cd</span><span class="w"> </span>~/projects/data/Alphafold2/24022023
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Download all databases</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>sh<span class="w"> </span>download_all_data.sh<span class="w"> </span>~/projects/data/Alphafold2/24022023/<span class="w"> </span>&gt;<span class="w"> </span>download.log<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>download_all.log
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Some fix-ups</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># mmCIF will not work because the firewall blocks the port, so I found this workaroud online</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># ref: https://github.com/deepmind/alphafold/issues/196</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>wget<span class="w"> </span>-e<span class="w"> </span><span class="nv">robots</span><span class="o">=</span>off<span class="w"> </span>-r<span class="w"> </span>--no-parent<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">7</span><span class="w"> </span>-q<span class="w"> </span>ftp://ftp.ebi.ac.uk/pub/databases/pdb/data/structures/divided/mmCIF/<span class="w"> </span>-P<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">RAW_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Last step is to fix all the permissions</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="m">24022023</span>/
 </span></code></pre></div>
 <h2 id="references">References</h2>
 <ul>
@@ -724,7 +761,7 @@ re-running of scripts.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2023</span>
       
         <br>
         Created:
