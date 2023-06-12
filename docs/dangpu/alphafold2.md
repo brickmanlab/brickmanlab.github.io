@@ -15,7 +15,7 @@ MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 ```bash
 srun -N 1 --ntasks-per-node=10 --gres=gpu:2 --pty bash
 module load miniconda/latest cuda/11.4 cudnn/8.2.2
-source activate /maps/projects/dan1/data/Brickman/conda_envs/af2
+source activate /maps/projects/dan1/data/Brickman/conda/envs/af2
 
 cd /maps/projects/dan1/data/Brickman/alphafold
 export AF2_DATA_DIR="~/projects/data/Alphafold2/24022023"
@@ -76,7 +76,7 @@ python run_alphafold.py \
 #SBATCH --mail-user=YOUR-EMAIL
 
 module load miniconda/latest cuda/11.4 cudnn/8.2.2
-source activate af2
+source activate /maps/projects/dan1/data/Brickman/conda/envs/af2
 cd ~/projects/data/Brickman/alphafold
 mkdir -p /scratch/tmp/alphatest
 export AF2_DATA_DIR="~/projects/data/Alphafold2/24022023"
@@ -101,8 +101,8 @@ srun python run_alphafold.py \
 ## 2. Installation
 
 ```bash
-conda create --prefix /maps/projects/dan1/data/Brickman/conda_envs/af2 python=3.8
-source activate /maps/projects/dan1/data/Brickman/conda_envs/af2
+conda create --prefix /maps/projects/dan1/data/Brickman/conda/envs/af2 python=3.8
+source activate /maps/projects/dan1/data/Brickman/conda/envs/af2
 
 mamba install hmmer
 pip install py3dmol
