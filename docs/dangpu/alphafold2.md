@@ -14,7 +14,7 @@ MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 
 ```bash
 srun -N 1 --ntasks-per-node=10 --gres=gpu:2 --pty bash
-module load miniconda/latest
+module load miniconda/latest cuda/11.4 cudnn/8.2.2
 source activate /maps/projects/dan1/data/Brickman/conda_envs/af2
 
 cd /maps/projects/dan1/data/Brickman/alphafold
@@ -75,7 +75,7 @@ python run_alphafold.py \
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=YOUR-EMAIL
 
-module load miniconda/latest
+module load miniconda/latest cuda/11.4 cudnn/8.2.2
 source activate af2
 cd ~/projects/data/Brickman/alphafold
 mkdir -p /scratch/tmp/alphatest
