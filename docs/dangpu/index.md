@@ -19,7 +19,7 @@ echo "export MODULEPATH=/maps/projects/dan1/apps/.modules:\${MODULEPATH}" >> $HO
 
 ```bash
 ln -s /maps/projects/dan1/people/$USER $HOME/datadir
-ln -s ~/projects/data/Brickman $HOME/
+ln -s /projects/dan1/data/Brickman $HOME/
 ```
 
 ### 3. Setup `.bash_profile`
