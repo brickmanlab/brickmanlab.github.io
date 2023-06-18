@@ -8,27 +8,39 @@ For starting on the server make sure to read:
 
 ## First time on server
 
-### 1. Run the command to do basic setup and logout afterwards
+We wrote a small script which will setup everything for you. Login to the server
+and run the following command.
 
 ```bash
-/maps/projects/dan1/apps/etc/init_dangpu_env.sh && \
-echo "export MODULEPATH=/maps/projects/dan1/apps/.modules:\${MODULEPATH}" >> $HOME/.bash_profile
+sh /maps/projects/dan1/data/Brickman/helper-scripts/helper-scripts/brickman-setup.sh
 ```
 
-### 2. Create extra simlinks for folders
+## Working with modules
 
 ```bash
-ln -s /maps/projects/dan1/people/$USER $HOME/datadir
-ln -s /projects/dan1/data/Brickman $HOME/
+module load miniconda/latest
 ```
 
-### 3. Setup `.bash_profile`
+## Conda
 
-To make your life simple, run the command below. This will give you access to
-extra helper scripts we have developed.
+If you work with `conda` you can use `mamba` instead, which is **faster** tool
+to install packages.
+
+We created shared `conda` environments to simplify your life.
+
+- To list all available envs: `conda env list`
+- To activate env: `source activate brickman`
+
+### Creating own shared environment
+
+Here is an example how we created shared environment called `brickman`.
 
 ```bash
-echo "export PATH=/projects/dan1/data/Brickman/helper-scripts/helper-scripts:${PATH}" >> ~/.bash_profile
-```
+module load miniconda/latest
 
-## Folder structure
+conda create --prefix /maps/projects/dan1/data/Brickman/conda/envs/brickman python=3.10
+source activate brickman
+pip install cruft cookiecutter
+
+chmod -R 755 /maps/projects/dan1/data/Brickman/conda/envs/brickman
+```

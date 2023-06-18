@@ -1,20 +1,6 @@
-# Conda
+# KU computer setup
 
-## Setup on DanGPU
-
-```yaml
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-envs_dirs:
-  - /projects/dan1/people/$USER/envs/
-  - ~/projects/data/Brickman/conda/envs
-pkgs_dirs:
-  - ~/.conda/pkgs/
-```
-
-## Setup on KU-computer
+## Conda
 
 Go [here](https://docs.conda.io/en/latest/miniconda.html) and download
 Miniconda PKG not BASH. If you're running **M1/2** please follow this
