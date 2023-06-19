@@ -517,24 +517,27 @@ us with tracking of all sequencing done in our lab.</p>
 </span></code></pre></div>
 <p>Next, please copy all <code>fastq</code> files from CPR share to folder <code>data/raw/fastq</code>.
 All processed data from a pipeline should be copied to <code>data/processed</code> folder.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync<span class="w"> </span>-avzh<span class="w"> </span>--progress<span class="w"> </span>~/ucph/ndir/SUN-CPR-genomics_data/...<span class="w"> </span>&lt;ASSAY_ID&gt;/data/raw/fastq
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync<span class="w"> </span>-avzh<span class="w"> </span>--progress<span class="w"> </span>--chmod<span class="o">=</span><span class="m">2775</span><span class="w"> </span>~/ucph/ndir/SUN-CPR-genomics_data/...<span class="w"> </span>&lt;ASSAY_ID&gt;/data/raw/fastq
+</span></code></pre></div>
+<p>After copying all the files, please run the last command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">775</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/assays/&lt;ASSAY_ID&gt;
 </span></code></pre></div>
 <h2 id="project">Project</h2>
 <p>Every time you want to make some analysis, you should create a <strong>project</strong>. Our
 folder structure will allow you to easily link various <strong>experiments</strong> to your
 project and make your analysis easier.</p>
 <p>Please use the following naming convention: <code>surname-&lt;YOUR_CODENAME&gt;</code></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>brickman
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">cd</span><span class="w"> </span>/home/<span class="nv">$USER</span>/Brickman/projects
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>cruft<span class="w"> </span>create<span class="w"> </span>https://github.com/brickmanlab/ngs-template<span class="w"> </span>--directory<span class="o">=</span><span class="s2">&quot;project&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>brickman
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">cd</span><span class="w"> </span>/home/<span class="nv">$USER</span>/Brickman/projects
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>cruft<span class="w"> </span>create<span class="w"> </span>https://github.com/brickmanlab/ngs-template<span class="w"> </span>--directory<span class="o">=</span><span class="s2">&quot;project&quot;</span>
 </span></code></pre></div>
 <p>Link required assays to your project.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/maps/projects/dan1/data/Brickman/assays/&lt;ASSAY_ID&gt;<span class="w"> </span>/maps/projects/dan1/data/Brickman/projects/&lt;PROJECT_ID&gt;/data/assays/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/maps/projects/dan1/data/Brickman/assays/&lt;ASSAY_ID&gt;<span class="w"> </span>/maps/projects/dan1/data/Brickman/projects/&lt;PROJECT_ID&gt;/data/assays/
 </span></code></pre></div>
 <p>Link external data if needed</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/maps/projects/dan1/data/Brickman/shared<span class="w"> </span>/maps/projects/dan1/data/Brickman/projects/&lt;PROJECT_ID&gt;/data/external/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/maps/projects/dan1/data/Brickman/shared<span class="w"> </span>/maps/projects/dan1/data/Brickman/projects/&lt;PROJECT_ID&gt;/data/external/
 </span></code></pre></div>
 
   <hr>
@@ -542,7 +545,7 @@ project and make your analysis easier.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
       
         <br>
         Created:
