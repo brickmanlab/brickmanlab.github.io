@@ -12,7 +12,7 @@ We wrote a small script which will setup everything for you. Login to the server
 and run the following command.
 
 ```bash
-sh /maps/projects/dan1/data/Brickman/helper-scripts/helper-scripts/brickman-setup.sh
+sh /maps/projects/dan1/data/Brickman/helper-scripts/brickman-setup.sh
 ```
 
 ## Working with modules
