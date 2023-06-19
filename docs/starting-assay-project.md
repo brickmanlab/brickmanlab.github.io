@@ -19,7 +19,13 @@ Next, please copy all `fastq` files from CPR share to folder `data/raw/fastq`.
 All processed data from a pipeline should be copied to `data/processed` folder.
 
 ```bash
-rsync -avzh --progress ~/ucph/ndir/SUN-CPR-genomics_data/... <ASSAY_ID>/data/raw/fastq
+rsync -avzh --progress --chmod=2775 ~/ucph/ndir/SUN-CPR-genomics_data/... <ASSAY_ID>/data/raw/fastq
+```
+
+After copying all the files, please run the last command.
+
+```bash
+chmod -R 775 /maps/projects/dan1/data/Brickman/assays/<ASSAY_ID>
 ```
 
 ## Project
