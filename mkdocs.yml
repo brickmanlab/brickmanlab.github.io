@@ -1,6 +1,6 @@
 site_name: Brickman Lab
-repo_url: https://github.com/brickmanlab/wiki
-repo_name: brickmanlab/wiki
+repo_url: https://github.com/brickmanlab/brickmanlab.github.io
+repo_name: brickmanlab/brickmanlab.github.io
 
 theme:
   name: material
