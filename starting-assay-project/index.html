@@ -15,7 +15,7 @@
         <link rel="next" href="../tools/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -517,7 +517,7 @@ us with tracking of all sequencing done in our lab.</p>
 </span></code></pre></div>
 <p>Next, please copy all <code>fastq</code> files from CPR share to folder <code>data/raw/fastq</code>.
 All processed data from a pipeline should be copied to <code>data/processed</code> folder.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync<span class="w"> </span>-avzh<span class="w"> </span>--progress<span class="w"> </span>--chmod<span class="o">=</span><span class="m">2775</span><span class="w"> </span>~/ucph/ndir/SUN-CPR-genomics_data/...<span class="w"> </span>&lt;ASSAY_ID&gt;/data/raw/fastq
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync<span class="w"> </span>-avzh<span class="w"> </span>--progress<span class="w"> </span>--chmod<span class="o">=</span><span class="m">2775</span><span class="w"> </span>~/ucph/ndir/SUN-CPR-genomics_data/...<span class="w"> </span>&lt;ASSAY_ID&gt;/raw/fastq
 </span></code></pre></div>
 <p>After copying all the files, please run the last command.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">775</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/assays/&lt;ASSAY_ID&gt;
@@ -545,7 +545,7 @@ project and make your analysis easier.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2023</span>
       
         <br>
         Created:
@@ -594,7 +594,7 @@ project and make your analysis easier.</p>
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>
