@@ -1,4 +1,4 @@
-# DanGPU
+# First time on DanGPU
 
 For starting on the server make sure to read:
 

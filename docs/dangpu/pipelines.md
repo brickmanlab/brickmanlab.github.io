@@ -1,4 +1,6 @@
-# Nextflow Tower
+# Pipelines
+
+## Nextflow Tower
 
 This is a guide on how to use [Nextflow Tower](https://help.tower.nf/23.1/) to
 monitor nf-core pipeline runs on DanGPU.
@@ -22,8 +24,6 @@ according to pipeline and examples can be found in the usage docs:
 Use the helper script **nf-core_tower.sh** to run DanGPU nf-core configs with Tower.
 
 ``` bash
-cd .local/bin
-
 # Start a new tmux session
 tmux new -s session_name
 
@@ -34,13 +34,13 @@ export TOWER_ACCESS_TOKEN=your_access_token
 Launch desired nf-core pipeline using helper script. Usage is
 
 ``` bash
-sh nf-core_tower.sh RUNNAME nextflow run <OPTIONS>
+nf-core_tower.sh RUNNAME nextflow run <OPTIONS>
 ```
 
 As a minimum, the pipeline name, samplesheet location, and genome must be defined, e.g. for rnaseq:
 
 ``` bash
-sh nf-core_tower.sh MYPAPER_2023 nextflow run nf-core/rnaseq -r 3.8.1 --input samplesheet.csv --genome mm10
+nf-core_tower.sh MYPAPER_2023 nextflow run nf-core/rnaseq -r 3.8.1 --input samplesheet.csv --genome mm10
 ```
 
 ## Tower CLI installation

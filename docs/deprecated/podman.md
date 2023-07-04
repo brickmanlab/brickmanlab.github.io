@@ -1,8 +1,6 @@
-# Packages
+# Podman
 
-## Podman
-
-### Setup
+## Setup
 
 Storage for Podman needs to be configured to fix UID errors when running on UTF filesystem:
 
@@ -20,7 +18,7 @@ podman ps
 podman run -it docker.io/library/busybox
 ```
 
-### Running the KU SUND DANGPU nf-core config with Podman
+## Running the KU SUND DANGPU nf-core config with Podman
 
 Currently this is not practical because file permissions cause the following error:
 
