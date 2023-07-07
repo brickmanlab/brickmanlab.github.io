@@ -27,6 +27,8 @@ template to generate a [folder structure](https://github.com/brickmanlab/ngs-tem
 Use [cruft](https://github.com/cruft/cruft) when generating assay and project folders to
 allow us to validate and sync old templates with the latest version.
 
+See [this section](./starting-assay-project.md) to get started with a new project/assay.
+
 ### 1.2 Assay folder
 
 For each NGS experiment there should be an `Assay` folder that will contain all experimental datasets (raw files and pipeline processed files).
@@ -69,8 +71,8 @@ CHIP_20230424
 - **pipeline.md**: description of the pipeline used to process raw data.
 - **processed**: folder with results of the preprocessing pipeline. Contents depend on the pipeline used.
 - **raw**: folder with the raw data.
-  - *.fastq.gz*:In the case of NGS assays, there should be fastq files.
-  - *samplesheet.csv*: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.
+    - *.fastq.gz*:In the case of NGS assays, there should be fastq files.
+    - *samplesheet.csv*: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.
 
 ### 1.3 Project folder
 
@@ -134,6 +136,8 @@ After project is done and published, it will be moved to `NGS_data`.
 
 More info on naming conventions for different types of files and analysis is in development.
 
+{{ read_table ('./assets/file_naming_convention.tsv') }}
+
 ## 2. Metadata and documentation
 
 Accurate documentation and metadata play a crucial role in facilitating data discovery and interpretation. Consider the following guidelines:
@@ -143,11 +147,13 @@ Accurate documentation and metadata play a crucial role in facilitating data dis
 
 ### 2.1 Assay metadata fields
 
-{{ read_table('./assay_metadata.tsv') }}
+{{ read_table('./assets/assay_metadata.tsv') }}
 
 ### 2.2 Project metadata fields
 
 In development.
+
+{{ read_table('./assets/project_metadata.tsv') }}
 
 ## 3. Data management catalogue
 
@@ -189,7 +195,13 @@ Whenever a new Assay folder is created, the data owner must fill up the required
 
 ## 9. Create a Data Management Plan
 
-We are currently working on a DMP template that it is prefilled with repetitive information using [DMPonline](https://dmponline.deic.dk/) and the KU guidelines.
-This template will contain all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc etc.
+!!! quote "From the University of Copenhagen RDM team"
+    ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​A Data Management Plan (DMP) is a planning tool that helps researchers to establish good practices for working with physical m​aterial and data in a research project. A DMP covers all relevant aspects of research data management throughout the project.
+    Writing a DMP early on in a project helps:
 
-**more info on what is a DMP and how to use it**
+    - identify potential issues with the management of research data.
+    - comply with relevant legislation, policies, and funder requirements.
+    - document agreements related to the collection, usage, and dissemination of research data between project partners or between student and supervisor.
+
+We are currently working on a DMP template that it is prefilled with repetitive information using [DMPonline](https://dmponline.deic.dk/) and the Horizon Europe guidelines.
+This template will contain all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc.

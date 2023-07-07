@@ -4,7 +4,7 @@ repo_name: brickmanlab/brickmanlab.github.io
 
 theme:
   name: material
-  logo: BrickmanLab.jpeg
+  logo: /assets/BrickmanLab.jpeg
   icon:
     repo: fontawesome/brands/github
   palette:

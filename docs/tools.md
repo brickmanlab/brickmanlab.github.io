@@ -1,3 +1,3 @@
 # Bioinformatics tools
 
-{{ read_csv('./biotools.csv') }}
+{{ read_csv('./assets/biotools.csv') }}
