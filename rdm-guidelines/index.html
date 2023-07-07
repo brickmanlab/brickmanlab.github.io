@@ -89,7 +89,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Brickman Lab" class="md-header__button md-logo" aria-label="Brickman Lab" data-md-component="logo">
       
-  <img src="../BrickmanLab.jpeg" alt="logo">
+  <img src="/assets/BrickmanLab.jpeg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -212,7 +212,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Brickman Lab" class="md-nav__button md-logo" aria-label="Brickman Lab" data-md-component="logo">
       
-  <img src="../BrickmanLab.jpeg" alt="logo">
+  <img src="/assets/BrickmanLab.jpeg" alt="logo">
 
     </a>
     Brickman Lab
@@ -850,6 +850,7 @@
 template to generate a <a href="https://github.com/brickmanlab/ngs-template">folder structure</a>.
 Use <a href="https://github.com/cruft/cruft">cruft</a> when generating assay and project folders to
 allow us to validate and sync old templates with the latest version.</p>
+<p>See <a href="../starting-assay-project/">this section</a> to get started with a new project/assay.</p>
 <h3 id="12-assay-folder">1.2 Assay folder</h3>
 <p>For each NGS experiment there should be an <code>Assay</code> folder that will contain all experimental datasets (raw files and pipeline processed files).
 Inside <code>Assay</code> there will be subfolders named after a unique NGS ID and the date it was created:</p>
@@ -884,9 +885,11 @@ Inside <code>Assay</code> there will be subfolders named after a unique NGS ID a
 <li><strong>metadata.yaml</strong>: metadata file for the assay describing different keys (<a href="#21-assay-metadata-fields">see below</a>).</li>
 <li><strong>pipeline.md</strong>: description of the pipeline used to process raw data.</li>
 <li><strong>processed</strong>: folder with results of the preprocessing pipeline. Contents depend on the pipeline used.</li>
-<li><strong>raw</strong>: folder with the raw data.</li>
+<li><strong>raw</strong>: folder with the raw data.<ul>
 <li><em>.fastq.gz</em>:In the case of NGS assays, there should be fastq files.</li>
 <li><em>samplesheet.csv</em>: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.</li>
+</ul>
+</li>
 </ul>
 <h3 id="13-project-folder">1.3 Project folder</h3>
 <p>There should be another folder called <code>Projects</code> that will contain project information and data analysis.</p>
@@ -936,6 +939,7 @@ with <strong>no exceptions</strong>!</p>
 </ul>
 <p><a href="https://faircookbook.elixir-europe.org/content/recipes/interoperability/transcriptomics-metadata.html#analysis-metadata">Transcriptomics metadata standards and fields</a></p>
 <p>More info on naming conventions for different types of files and analysis is in development.</p>
+<p>{{ read_table ('./assets/file_naming_convention.tsv') }}</p>
 <h2 id="2-metadata-and-documentation">2. Metadata and documentation</h2>
 <p>Accurate documentation and metadata play a crucial role in facilitating data discovery and interpretation. Consider the following guidelines:</p>
 <ul>
@@ -949,8 +953,8 @@ with <strong>no exceptions</strong>!</p>
 <th align="left">Metadata field</th>
 <th align="left">Definition</th>
 <th align="left">Format</th>
-<th align="left">ontology</th>
-<th align="left">example</th>
+<th align="left">Ontology</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
@@ -1040,10 +1044,10 @@ with <strong>no exceptions</strong>!</p>
 </tr>
 <tr>
 <td align="left">pipeline</td>
-<td align="left">Pipeline used to process data</td>
+<td align="left">Pipeline used to process data and version</td>
 <td align="left">nan</td>
 <td align="left">nan</td>
-<td align="left">nf-core/chipseq</td>
+<td align="left">nf-core/chipseq -r 1.0</td>
 </tr>
 <tr>
 <td align="left">strandedness</td>
@@ -1071,7 +1075,7 @@ with <strong>no exceptions</strong>!</p>
 <td align="left">If it is internal or external data</td>
 <td align="left">&lt;internal OR external></td>
 <td align="left">nan</td>
-<td align="left">nan</td>
+<td align="left">internal</td>
 </tr>
 <tr>
 <td align="left">path</td>
@@ -1087,10 +1091,58 @@ with <strong>no exceptions</strong>!</p>
 <td align="left">nan</td>
 <td align="left">Oct4 ChIP after pERK activation</td>
 </tr>
+<tr>
+<td align="left">labguru_ID</td>
+<td align="left">ID of the experiment/assay in labguru_ID</td>
+<td align="left">plain text</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+</tr>
 </tbody>
 </table>
 <h3 id="22-project-metadata-fields">2.2 Project metadata fields</h3>
 <p>In development.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Metadata field</th>
+<th align="left">Definition</th>
+<th align="left">Format</th>
+<th align="right">Ontology</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">project</td>
+<td align="left">Project ID</td>
+<td align="left">&lt;surname>_et_al_2023</td>
+<td align="right">nan</td>
+<td align="left">proks_et_al_2023</td>
+</tr>
+<tr>
+<td align="left">author</td>
+<td align="left">Owner of the project</td>
+<td align="left">&lt;First name> &lt;Surname></td>
+<td align="right">nan</td>
+<td align="left">Martin Proks</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">Date of creation</td>
+<td align="left">YYYYMMDD</td>
+<td align="right">nan</td>
+<td align="left">20230101</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">Short description of the project</td>
+<td align="left">Plain text</td>
+<td align="right">nan</td>
+<td align="left">This is a project describing the effect of Oct4 perturbation after pERK activation</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-data-management-catalogue">3. Data management catalogue</h2>
 <p>@SLundregan is in the process of building a prototype for <code>Assay</code>, using the metadata contained in all <code>description.yml</code> and <code>metadata.yml</code> files in the assay folder.
 This will be in the form of an SQLite database that that is easily updatable by running a helper script.</p>
@@ -1115,16 +1167,25 @@ Whenever a new Assay folder is created, the data owner must fill up the required
 <!-- **Note**: Probably we should start using Annotare  https://www.ebi.ac.uk/fg/annotare/login/ -->
 
 <h2 id="9-create-a-data-management-plan">9. Create a Data Management Plan</h2>
-<p>We are currently working on a DMP template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a> and the KU guidelines.
-This template will contain all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc etc.</p>
-<p><strong>more info on what is a DMP and how to use it</strong></p>
+<div class="admonition quote">
+<p class="admonition-title">From the University of Copenhagen RDM team</p>
+<p>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​A Data Management Plan (DMP) is a planning tool that helps researchers to establish good practices for working with physical m​aterial and data in a research project. A DMP covers all relevant aspects of research data management throughout the project.
+Writing a DMP early on in a project helps:</p>
+<ul>
+<li>identify potential issues with the management of research data.</li>
+<li>comply with relevant legislation, policies, and funder requirements.</li>
+<li>document agreements related to the collection, usage, and dissemination of research data between project partners or between student and supervisor.</li>
+</ul>
+</div>
+<p>We are currently working on a DMP template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a> and the Horizon Europe guidelines.
+This template will contain all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2023</span>
       
         <br>
         Created:
