@@ -939,7 +939,138 @@ with <strong>no exceptions</strong>!</p>
 </ul>
 <p><a href="https://faircookbook.elixir-europe.org/content/recipes/interoperability/transcriptomics-metadata.html#analysis-metadata">Transcriptomics metadata standards and fields</a></p>
 <p>More info on naming conventions for different types of files and analysis is in development.</p>
-<p>{{ read_table ('./assets/file_naming_convention.tsv') }}</p>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">description</th>
+<th align="left">naming_convention</th>
+<th align="left">file format</th>
+<th align="left">example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">.fastq</td>
+<td align="left">raw sequencing reads</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">sampleID_run_read1.fastq</td>
+</tr>
+<tr>
+<td align="left">.fastqc</td>
+<td align="left">quality control from fastqc</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">sampleID_run_read1.fastqc</td>
+</tr>
+<tr>
+<td align="left">.bam</td>
+<td align="left">aligned reads</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">sampleID_run_read1.bam</td>
+</tr>
+<tr>
+<td align="left">GTF</td>
+<td align="left">sequence annotation</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td align="left">GFF</td>
+<td align="left">sequence annotation</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td align="left">.bed</td>
+<td align="left">genome locations</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+</tr>
+<tr>
+<td align="left">.bigwig</td>
+<td align="left">genome coverage</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+</tr>
+<tr>
+<td align="left">.fasta</td>
+<td align="left">sequence data (nucleotide/aminoacid)</td>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td align="left">Multiqc report</td>
+<td align="left">QC aggregated report</td>
+<td align="left"><assayID>_YYYYMMDD.multiqc</td>
+<td align="left">multiqc</td>
+<td align="left">RNA_20200101.multiqc</td>
+</tr>
+<tr>
+<td align="left">Count matrix</td>
+<td align="left">final count matrix</td>
+<td align="left"><assayID>_cm_aligner_YYYYMMDD.tsv</td>
+<td align="left">tsv</td>
+<td align="left">RNA_cm_salmon_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">DEA</td>
+<td align="left">differential expression analysis results</td>
+<td align="left">DEA_<condition1-condition2>_LFC<absolute_threshold>_p<pvalue decimals>_YYYYMMDD.tsv</td>
+<td align="left">tsv</td>
+<td align="left">DEA_treat-untreat_LFC1_p01_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">DBA</td>
+<td align="left">differential binding analysis results</td>
+<td align="left">DBA_<condition1-condition2>_LFC<absolute_threshold>_p<pvalue decimals>_YYYYMMDD.tsv</td>
+<td align="left">tsv</td>
+<td align="left">DBA_treat-untreat_LFC1_p01_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">MAplot</td>
+<td align="left">MA plot</td>
+<td align="left">MAplot_<condition1-condition2>_YYYYMMDD.jpeg</td>
+<td align="left">jpeg</td>
+<td align="left">MAplot_treat-untreat_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">Heatmap plot</td>
+<td align="left">Heatmap plot of anything</td>
+<td align="left">heatmap_<type>_YYYYMMDD.jpeg</td>
+<td align="left">jpeg</td>
+<td align="left">Heatmap_sample-cor_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">Volcano plot</td>
+<td align="left">Volcano plot</td>
+<td align="left">volcano_<condition1-condition2>_YYYYMMDD.jpeg</td>
+<td align="left">jpeg</td>
+<td align="left">volcano_treat-untreat_20200101.tsv</td>
+</tr>
+<tr>
+<td align="left">Venn diagram</td>
+<td align="left">Venn diagram</td>
+<td align="left">venn_<type>_YYYYMMDD.jpeg</td>
+<td align="left">jpeg</td>
+<td align="left">venn_consensus_20200101.jpeg</td>
+</tr>
+<tr>
+<td align="left">Enrichment table</td>
+<td align="left">Enrichment results</td>
+<td align="left">nan</td>
+<td align="left">tsv</td>
+<td align="left">nan</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-metadata-and-documentation">2. Metadata and documentation</h2>
 <p>Accurate documentation and metadata play a crucial role in facilitating data discovery and interpretation. Consider the following guidelines:</p>
 <ul>
@@ -1185,7 +1316,7 @@ This template will contain all the necessary information regarding common practi
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2023</span>
       
         <br>
         Created:
