@@ -136,7 +136,7 @@ After project is done and published, it will be moved to `NGS_data`.
 
 More info on naming conventions for different types of files and analysis is in development.
 
-{{ read_table ('./assets/file_naming_convention.tsv') }}
+{{ read_table('./assets/file_naming_convention.tsv') }}
 
 ## 2. Metadata and documentation
 
