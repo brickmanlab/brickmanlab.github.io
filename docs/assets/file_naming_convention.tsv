@@ -11,8 +11,8 @@ Multiqc report	QC aggregated report	<assayID\>_YYYYMMDD.multiqc	multiqc	RNA_2020
 Count matrix	final count matrix	<assayID\>_cm_aligner_YYYYMMDD.tsv	tsv	RNA_cm_salmon_20200101.tsv
 DEA	differential expression analysis results	DEA_<condition1-condition2\>_LFC<absolute_threshold\>_p<pvalue decimals\>_YYYYMMDD.tsv	tsv	DEA_treat-untreat_LFC1_p01_20200101.tsv
 DBA	differential binding analysis results	DBA_<condition1-condition2\>_LFC<absolute_threshold\>_p<pvalue decimals\>_YYYYMMDD.tsv	tsv	DBA_treat-untreat_LFC1_p01_20200101.tsv
-MAplot	MA plot	MAplot_<condition1-condition2\>_YYYYMMDD.jpeg	jpeg	MAplot_treat-untreat_20200101.tsv
-Heatmap plot	Heatmap plot of anything	heatmap_<type\>_YYYYMMDD.jpeg	jpeg	Heatmap_sample-cor_20200101.tsv
-Volcano plot	Volcano plot	volcano_<condition1-condition2\>_YYYYMMDD.jpeg	jpeg	volcano_treat-untreat_20200101.tsv
+MAplot	MA plot	MAplot_<condition1-condition2\>_YYYYMMDD.jpeg	jpeg	MAplot_treat-untreat_20200101.jpeg
+Heatmap plot	Heatmap plot of anything	heatmap_<type\>_YYYYMMDD.jpeg	jpeg	Heatmap_sampleCor_20200101.jpeg
+Volcano plot	Volcano plot	volcano_<condition1-condition2\>_YYYYMMDD.jpeg	jpeg	volcano_treat-untreat_20200101.jpeg
 Venn diagram	Venn diagram	venn_<type\>_YYYYMMDD.jpeg	jpeg	venn_consensus_20200101.jpeg
 Enrichment table	Enrichment results		tsv
