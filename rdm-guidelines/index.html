@@ -19,7 +19,7 @@
     
     
       
-        <title>Research Data Management Guidelines - Brickman Lab</title>
+        <title>Research Data Management Guidelines for NGS - Brickman Lab</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#research-data-management-guidelines" class="md-skip">
+        <a href="#research-data-management-guidelines-for-ngs" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Research Data Management Guidelines
+              Research Data Management Guidelines for NGS
             
           </span>
         </div>
@@ -280,12 +280,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Research Data Management Guidelines
+          Research Data Management Guidelines for NGS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Research Data Management Guidelines
+        Research Data Management Guidelines for NGS
       </a>
       
         
@@ -412,50 +412,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-data-management-catalogue" class="md-nav__link">
-    3. Data management catalogue
+  <a href="#3-data-catalogue-and-browser" class="md-nav__link">
+    3. Data catalogue and browser
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-database-browser" class="md-nav__link">
-    4. Database browser
+  <a href="#4-projects-version-control" class="md-nav__link">
+    4. Projects version control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-projects-version-control" class="md-nav__link">
-    5. Projects version control
+  <a href="#5-projects-github-pages" class="md-nav__link">
+    5. Projects GitHub pages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-projects-github-pages" class="md-nav__link">
-    6. Projects GitHub pages
+  <a href="#6-project-archiving-in-zenodo" class="md-nav__link">
+    6. Project archiving in Zenodo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-project-archiving-in-zenodo" class="md-nav__link">
-    7. Project archiving in Zenodo
+  <a href="#7-data-upload-to-geo" class="md-nav__link">
+    7. Data upload to GEO
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-data-upload-to-geo" class="md-nav__link">
-    8. Data upload to GEO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-create-a-data-management-plan" class="md-nav__link">
-    9. Create a Data Management Plan
+  <a href="#8-create-a-data-management-plan" class="md-nav__link">
+    8. Create a Data Management Plan
   </a>
   
 </li>
@@ -759,50 +752,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-data-management-catalogue" class="md-nav__link">
-    3. Data management catalogue
+  <a href="#3-data-catalogue-and-browser" class="md-nav__link">
+    3. Data catalogue and browser
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-database-browser" class="md-nav__link">
-    4. Database browser
+  <a href="#4-projects-version-control" class="md-nav__link">
+    4. Projects version control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-projects-version-control" class="md-nav__link">
-    5. Projects version control
+  <a href="#5-projects-github-pages" class="md-nav__link">
+    5. Projects GitHub pages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-projects-github-pages" class="md-nav__link">
-    6. Projects GitHub pages
+  <a href="#6-project-archiving-in-zenodo" class="md-nav__link">
+    6. Project archiving in Zenodo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-project-archiving-in-zenodo" class="md-nav__link">
-    7. Project archiving in Zenodo
+  <a href="#7-data-upload-to-geo" class="md-nav__link">
+    7. Data upload to GEO
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-data-upload-to-geo" class="md-nav__link">
-    8. Data upload to GEO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-create-a-data-management-plan" class="md-nav__link">
-    9. Create a Data Management Plan
+  <a href="#8-create-a-data-management-plan" class="md-nav__link">
+    8. Create a Data Management Plan
   </a>
   
 </li>
@@ -825,13 +811,12 @@
   
 
 
-<h1 id="research-data-management-guidelines">Research Data Management Guidelines</h1>
+<h1 id="research-data-management-guidelines-for-ngs">Research Data Management Guidelines for NGS</h1>
 <p>This section provides guidelines for effective research data management within our lab. By adopting these guidelines, we aim to improve data organization and naming conventions, leading to enhanced data governance and research efficiency. The guidelines include the following steps:</p>
 <ol>
 <li>Adhere to folder structure and naming conventions for <code>Assays</code> and <code>Projects</code> folders.</li>
 <li>Add relevant metadata to a <code>metadata.yml</code> in each folder</li>
-<li>Create a database from metadata files in <code>Assays</code> and <code>Projects</code> folders.</li>
-<li>Visualize database with a <a href="https://panel.holoviz.org/">Panel python app</a>.</li>
+<li>Create a database from metadata files in <code>Assays</code> and <code>Projects</code> folders and browse it with a <a href="https://panel.holoviz.org/">Panel python app</a>.</li>
 <li><code>Projects</code> folders will be version controlled with Github and the <a href="https://github.com/brickmanlab">Brickman organization</a>.</li>
 <li><code>Projects</code> reports will be displayed under the <a href="https://gbrickmanlab.github.io">Brickman organization GitHub Pages</a>.</li>
 <li><code>Projects</code> will be syncronized and archived in <a href="https://zenodo.org/">Zenodo</a>, which will give a DOI that can be used in a publication.</li>
@@ -898,7 +883,7 @@ to a publication.</p>
 <p>The project folder should be named after a unique identifier, such as:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;Project-ID&gt;_YYYYMMDD
 </span></code></pre></div>
-<p><code>&lt;Project-ID&gt;</code> should be the surname of the owner of the project folder and the publication year, e.g. <code>JARH_etal_20230101</code>.</p>
+<p><code>&lt;Project-ID&gt;</code> should be the initials of the owner of the project folder and the publication year, e.g. <code>JARH_et_al_20230101</code>.</p>
 <h4 id="folder-structure_1"><strong>Folder structure</strong></h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;Project-ID&gt;_20230424
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>data
@@ -906,23 +891,37 @@ to a publication.</p>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│<span class="w">  </span>├──<span class="w"> </span>external
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│<span class="w">  </span>└──<span class="w"> </span>processed
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├──<span class="w"> </span>documents
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├──<span class="w"> </span>notebooks
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├──<span class="w"> </span>README.md
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>├──<span class="w"> </span>reports
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│<span class="w">  </span>└──<span class="w"> </span>figures
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├──<span class="w"> </span>requirements.txt
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>├──<span class="w"> </span>results
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>└──<span class="w"> </span>scripts
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│<span class="w">  </span>└──<span class="w"> </span>Non-sensitive_NGS_research_project_template.docx
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├──<span class="w"> </span>notebooks
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis.rmd
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├──<span class="w"> </span>README.md
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├──<span class="w"> </span>reports
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│<span class="w">  </span>├──<span class="w"> </span>figures
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│<span class="w">  </span>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis.html
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>├──<span class="w"> </span>requirements.txt
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>├──<span class="w"> </span>results
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis/
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>├──<span class="w"> </span>scripts
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>├──<span class="w"> </span>description.yml
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>└──<span class="w"> </span>metadata.yml
 </span></code></pre></div>
 <ul>
 <li><strong>data</strong>: folder that contains symlinks or shortcuts to where the data is, avoiding copying and modification of original files.</li>
-<li><strong>documents</strong>: folder containing word documents, slides or pdfs related to the project, such as explanations of the data or project, papers, etc.</li>
+<li><strong>documents</strong>: folder containing word documents, slides or pdfs related to the project, such as explanations of the data or project, papers, etc. It also contains your <a href="#8-create-a-data-management-plan">Data Management Plan</a>.<ul>
+<li><em>Non-sensitive_NGS_research_project_template.docx</em>. This is a prefilled Data Management Plan based on the Horizon Europe guidelines.</li>
+</ul>
+</li>
 <li><strong>notebooks</strong>: folder containing Jupyter, R markdown or Quarto notebooks with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes. Notebooks should be labeled numerically in order they were created e.g. <code>00_preprocessing</code></li>
 <li><strong>README.md</strong>: detailed description of the project in markdown format.</li>
-<li><strong>reports</strong>: notebooks rendered as html/docx/pdf versions, ideal for sharing with colleagues and also as a formal report of the data analysis procedure.</li>
+<li><strong>reports</strong>: notebooks rendered as html/docx/pdf versions, ideal for sharing with colleagues and also as a formal report of the data analysis procedure.<ul>
 <li><em>figures</em>: figures produced upon rendering notebooks. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which figures.</li>
+</ul>
+</li>
 <li><strong>results</strong>: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which results.</li>
 <li><strong>scripts</strong>: folder containing helper scripts needed to run data analysis or reproduce the work of the folder</li>
+<li><strong>description.yml</strong>: short description of the project.</li>
+<li><strong>metadata.yml</strong>: metadata file for the assay describing different keys (<a href="#22-project-metadata-fields">see below</a>).</li>
 </ul>
 <!-- **Note**: maybe we can make an environment folder or put inside the scripts folder a Dockerfile that should give you an environment where you can reproduce the results of the folder? -->
 
@@ -936,6 +935,8 @@ with <strong>no exceptions</strong>!</p>
 <h3 id="15-general-naming-conventions-and-more-info">1.5 General naming conventions and more info</h3>
 <ul>
 <li>date format: <code>YYYYMMDD</code></li>
+<li>authors: initials</li>
+<li>file and folder names: <strong>No use of spaces</strong>. Field sections are separated by underscores <code>_</code>. Words in each section are written in camelCase. For example: <code>field1_word1Word2.txt</code>.</li>
 </ul>
 <p><a href="https://faircookbook.elixir-europe.org/content/recipes/interoperability/transcriptomics-metadata.html#analysis-metadata">Transcriptomics metadata standards and fields</a></p>
 <p>More info on naming conventions for different types of files and analysis is in development.</p>
@@ -1039,21 +1040,21 @@ with <strong>no exceptions</strong>!</p>
 <td align="left">MA plot</td>
 <td align="left">MAplot_&lt;condition1-condition2>_YYYYMMDD.jpeg</td>
 <td align="left">jpeg</td>
-<td align="left">MAplot_treat-untreat_20200101.tsv</td>
+<td align="left">MAplot_treat-untreat_20200101.jpeg</td>
 </tr>
 <tr>
 <td align="left">Heatmap plot</td>
 <td align="left">Heatmap plot of anything</td>
 <td align="left">heatmap_&lt;type>_YYYYMMDD.jpeg</td>
 <td align="left">jpeg</td>
-<td align="left">Heatmap_sample-cor_20200101.tsv</td>
+<td align="left">Heatmap_sampleCor_20200101.jpeg</td>
 </tr>
 <tr>
 <td align="left">Volcano plot</td>
 <td align="left">Volcano plot</td>
 <td align="left">volcano_&lt;condition1-condition2>_YYYYMMDD.jpeg</td>
 <td align="left">jpeg</td>
-<td align="left">volcano_treat-untreat_20200101.tsv</td>
+<td align="left">volcano_treat-untreat_20200101.jpeg</td>
 </tr>
 <tr>
 <td align="left">Venn diagram</td>
@@ -1274,30 +1275,29 @@ with <strong>no exceptions</strong>!</p>
 </tr>
 </tbody>
 </table>
-<h2 id="3-data-management-catalogue">3. Data management catalogue</h2>
+<h2 id="3-data-catalogue-and-browser">3. Data catalogue and browser</h2>
 <p>@SLundregan is in the process of building a prototype for <code>Assay</code>, using the metadata contained in all <code>description.yml</code> and <code>metadata.yml</code> files in the assay folder.
 This will be in the form of an SQLite database that that is easily updatable by running a helper script.</p>
-<h2 id="4-database-browser">4. Database browser</h2>
 <p>@SLundregan is also working on a browsable database using <a href="https://panel.holoviz.org/">Panel python app</a>.
 The app will display the latest version of the SQLite database. Clicking on an item from the database
 will open a tab containing all available metadata for the assay.</p>
 <p>Also, it would be nice if you can create an <code>Assay</code> folder directly from there,
 making it easy to fill up the info for the metadata and GEO submission (<a href="#8-data-upload-to-geo">see below</a>)</p>
 <p>In the future, you could ideally visualize an analysed single cell RNAseq dataset by opening <a href="https://cirrocumulus.readthedocs.io/en/latest/">Cirrocumulus</a> session.</p>
-<h2 id="5-projects-version-control">5. <code>Projects</code> version control</h2>
+<h2 id="4-projects-version-control">4. <code>Projects</code> version control</h2>
 <p>All projects should be version controlled using GitHub under the <a href="https://github.com/brickmanlab/">Brickman organization</a>. After creating a cookiecutter template, initiate a git repository on the folder. The Git repository can stay private until it is ready for publication.</p>
-<h2 id="6-projects-github-pages">6. <code>Projects</code> GitHub pages</h2>
+<h2 id="5-projects-github-pages">5. <code>Projects</code> GitHub pages</h2>
 <p>Using GitHub pages, it is possible to display your data analyses (or anything related to the project) inside the <code>Projects</code> folder so that they are open to the public in a html format.
 This is great for transparency and reproducibility purposes. This can be done after the paper has been made public (it is not possible to do with a private repository without paying).</p>
 <p><strong>Info on how this is done should be put here</strong></p>
-<h2 id="7-project-archiving-in-zenodo">7. <code>Project</code> archiving in Zenodo</h2>
+<h2 id="6-project-archiving-in-zenodo">6. <code>Project</code> archiving in Zenodo</h2>
 <p>Before submitting, link the repository to <a href="https://zenodo.org/">Zenodo</a> and then create a Git release. This release will be caught by Zenodo and will give you a DOI that you can submit along the manuscript.</p>
-<h2 id="8-data-upload-to-geo">8. Data upload to GEO</h2>
+<h2 id="7-data-upload-to-geo">7. Data upload to GEO</h2>
 <p>The raw data from NGS experiments will be uploaded to the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus (GEO)</a>.
 Whenever a new Assay folder is created, the data owner must fill up the required documentation and information needed to make the GEO submission as smooth as possible.</p>
 <!-- **Note**: Probably we should start using Annotare  https://www.ebi.ac.uk/fg/annotare/login/ -->
 
-<h2 id="9-create-a-data-management-plan">9. Create a Data Management Plan</h2>
+<h2 id="8-create-a-data-management-plan">8. Create a Data Management Plan</h2>
 <div class="admonition quote">
 <p class="admonition-title">From the University of Copenhagen RDM team</p>
 <p>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​A Data Management Plan (DMP) is a planning tool that helps researchers to establish good practices for working with physical m​aterial and data in a research project. A DMP covers all relevant aspects of research data management throughout the project.
@@ -1308,15 +1308,15 @@ Writing a DMP early on in a project helps:</p>
 <li>document agreements related to the collection, usage, and dissemination of research data between project partners or between student and supervisor.</li>
 </ul>
 </div>
-<p>We are currently working on a DMP template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a> and the Horizon Europe guidelines.
-This template will contain all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc.</p>
+<p>We are have written a DMP template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a> and the Horizon Europe guidelines. This template contains all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc. The template is part of the <code>project</code> folder template, under <code>documents</code>. You can check the file <a href="https://github.com/brickmanlab/ngs-template/blob/master/project/%7B%7B%20cookiecutter.project%20%7D%7D/documents/Non-sensitive_NGS_research_project_template.docx">here</a>.</p>
+<p>The Horizon Europe template is mostly focused on digital data and so, it is maybe not the best option regarding the needs of the Brickman Lab, due to the fact that it is mostly a wet lab with some bioinformatics. We will start working on another DMP based on the KU template, which is designed for both physical and digital data.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
       
         <br>
         Created:
