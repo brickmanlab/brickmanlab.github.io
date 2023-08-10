@@ -1,21 +1,20 @@
-Metadata field	Definition	Format	Ontology	Example
-assay_ID	Identifier for the assay that is at least unique within the project	<code_name\>_YYYYMMDD		CHIP_20200101
-assay_type	The type of experiment performed, eg ATAC-seq or seqFISH		ontology field- e.g. EFO or OBI	ChIPseq
-assay_subtype	More specific type or assay like bulk nascent RNAseq or single cell ATACseq		ontology field- e.g. EFO or OBI	bulk ChIPseq
-owner	Owner of the assay (who made the experiment?).	<First Name\> <Last Name\>		Jose Romero
-platform	The type of instrument used to perform the assay, eg Illumina HiSeq 4000 or Fluidigm C1 microfluidics platform		ontology field- e.g. EFO or OBI	Illumina
-extraction_method	Technique used to extract the nucleic acid from the cell		ontology field- e.g. EFO or OBI
-library_method	Technique used to amplify a cDNA library		ontology field- e.g. EFO or OBI
-external accessions	Accession numbers from external resources to which assay or protocol information was submitted		eg protocols.io, AE, GEO accession number, etc	GSEXXXXX
-codename	Internal code name for easy identification (like a keyword)			Oct4_ChIP
-date	Date of assay creation	YYYYMMDD		20200101
-nsamples	Number of samples analyzed in this assay	<integer\>		9
-is_paired	Paired fastq files or not	<single OR paired\>		single
-pipeline	Pipeline used to process data and version			nf-core/chipseq -r 1.0
-strandedness	The strandedness of the cDNA library	<+ OR - OR *\>		*
-processed_by	Who processed the data	<First Name\> <Last Name\>		Sarah Lundregan
-organism	Organism origin	<Genus species\>		Mus musculus
-origin	If it is internal or external data	<internal OR external\>		internal
-path	Path to files	</path/to/file\>
-short_desc	Short description of the assay	plain text		Oct4 ChIP after pERK activation
-labguru_ID	ID of the experiment/assay in labguru_ID	plain text
+Metadata field	Definition	Format	Example
+assay_id	Identifier for the assay	<assay\>_<codename\>_YYYYMMDD	CHIP_Oct4_20200101
+assay	What kind of NGS was used in your experiment?	"[""CHIP"", ""RNA"", ""ATAC"", ""SCR"", ""PROT"", ""CAT"", ""CAR"", ""RIME"", ""TAP""]"	ChIPseq
+owner	Who performed the experiment?	<First Name\> <Last Name\>	Jose Romero
+date	Date of sequencing, should be the same as defined by Genomics Platform in YYYYMMDD format!	YYYYMMDD	20200101
+codename	Your name initials [Example: JB for Josh Brickman]	<Initials OR keyword\>	JR
+eln_id	Optional: Electronic lab notebook ID	Free text	12345
+technology	What technology was used? [Example: 10X Genomics if you used SCR]	Free text	10X genomics
+sequencer	What sequencing machine was used? [Example: NovaSeq 2000/NextSeq 2000/NextSeq 500]	Free text	NextSeq 2000
+seq_kit	What sequencing kit did you use? Please provide product number if available	Free text
+n_samples	How many samples have been sequenced?	<integer\>	9
+is_paired	Paired fastq files or not	<single-end OR paired-end\>	single-end
+pipeline	Pipeline name [Example: nf-core/rnaseq 3.12.0 or custom]	Free text	nf-core/chipseq -r 1.0
+processed_by	Person responsible for pre-processing (pipeline execution)	<First Name\> <Last Name\>	Sarah Lundregan
+organism	What organism is this?	<mouse OR human OR other\>	mouse
+organism_version	Which version of genome was used [Example: mm10, hg38]	Free text	mm10
+organism_subgroup	In vitro or in vivo?	<in vivo OR in vitro\>	in vitro
+origin	Is this internal experiment of external (collaborator/publication)?	<internal OR external\>	internal
+note	Optional: Was there something worth knowing?	Free text	Low quality experiment/Indexes are swapped ...
+genomics_path	Path to where the data is	</path/to/file\>	smb:/path/to/file
