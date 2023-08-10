@@ -1,5 +1,5 @@
-Metadata field	Definition	Format	Ontology	Example
-project	Project ID	<surname\>_et_al_2023		proks_et_al_2023
-author	Owner of the project	<First name\> <Surname\>		Martin Proks
-date	Date of creation	YYYYMMDD		20230101
-description	Short description of the project	Plain text		This is a project describing the effect of Oct4 perturbation after pERK activation
+Metadata field	Definition	Format	Example
+project	Project name	<name\>_<keyword\>_YYYY	lundregan_oct4_2023
+author	Owner of the project	<First name\> <Surname\>	Sarah Lundregran
+date	Date of creation	YYYYMMDD	20230101
+description	Short description of the project	Plain text	This is a project describing the effect of Oct4 perturbation after pERK activation
