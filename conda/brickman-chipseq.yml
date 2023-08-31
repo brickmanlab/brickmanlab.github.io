@@ -1,0 +1,16 @@
+name: brickman-chipseq
+channels:
+  - conda-forge
+  - bioconda
+  - anaconda
+  - defaults
+dependencies:
+  - bioconda::bedtools==2.31.0
+  - bioconda::deeptools==2.31.0
+  - bioconda::homer==4.11
+  - bioconda::intervene==0.6.4
+  - bioconda::macs2==2.2.9.1
+  - bioconda::pygenometracks==3.8
+  - bioconda::seacr==1.3
+  - bioconda::samtools==1.17
+prefix: /projects/dan1/data/Brickman/conda/envs/brickman-chipseq
