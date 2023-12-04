@@ -1,0 +1,14 @@
+name: dREG
+channels:
+  - conda-forge
+  - bioconda
+  - anaconda
+  - defaults
+dependencies:
+  - python ==3.8
+  - conda-forge::r-base==3.6.3
+  - bioconda::bedops
+  - bioconda::ucsc-bedgraphtobigwig
+  - anaconda::pcre
+  - conda-forge::boost
+prefix: /projects/dan1/data/Brickman/conda/envs/dReg
