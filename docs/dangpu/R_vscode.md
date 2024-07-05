@@ -22,7 +22,8 @@ code tunnel
 - Chose your KU microsoft account and click continue
 - Open the link in your web browser and accept the connection
 - ALTERNATIVELY: Open your VScode desktop app, click `open a remote window` in bottom left corner, choose connect to tunnel > microsoft account > tunnel name and accept connection
-- You can now run R interactively on the chosen compute node using VScode
+- Go back to terminal and hit ENTER on questions about tunnel name
+- go to vsc > settings > Rterm:Linux and paste the following `/opt/software/R/4.3.1/bin/R`
 
 **Note:** in the VScode desktop app, file > preferences > settings > R, Rpath and Rterm should be left blank and uncheck "always use active terminal"
 
