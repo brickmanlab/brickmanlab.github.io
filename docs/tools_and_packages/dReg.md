@@ -1,8 +1,8 @@
 # dReg
 
-# 1. Running
+## 1. Running
 
-## Make dReg bigwigs
+### Make dReg bigwigs
 
 If your nascent RNA-seq data is already aligned, bw suitable for use with dReg can be prepared using Danko-Lab [RunOnBamToBigWig](https://github.com/Danko-Lab/RunOnBamToBigWig)
 
@@ -39,7 +39,7 @@ for sample in ${SAMPLES}; do
 done
 ```
 
-## GPU check
+### GPU check
 
 Check available GPUs and running processes before using dReg. GPU 0 is reserved for Brickman group
 
@@ -47,7 +47,7 @@ Check available GPUs and running processes before using dReg. GPU 0 is reserved 
 nvidia-smi
 ```
 
-## Example dReg script
+### Example dReg script
 
 ```bash
 #!/bin/bash
@@ -78,9 +78,9 @@ for sample in ${SAMPLES}; do
 done
 ```
 
-# 2. Installation
+## 2. Installation
 
-## Installing dReg
+### Installing dReg
 
 **Note:** Python version in conda env must be 3.8, and R version < 4.0
 
@@ -108,7 +108,7 @@ cd resources
 wget ftp://cbsuftp.tc.cornell.edu/danko/hub/dreg.models/asvm.gdm.6.6M.20170828.rdata
 ```
 
-## Installing Rgtsvm
+### Installing Rgtsvm
 
 Rgtsvm is required for dReg to use GPU resources
 

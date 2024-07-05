@@ -7,25 +7,13 @@ us with tracking of all sequencing done in our lab.
 
 ## Assay
 
-```bash
-module load miniconda/latest
-source activate brickman
+When you sequence an experiment, we create an **Assay** out of it, so we can use
+it in a project afterwards.
 
-cd /home/$USER/Brickman/assays
-cruft create https://github.com/brickmanlab/ngs-template --directory="assay"
-```
-
-Next, please copy all `fastq` files from CPR share to folder `data/raw/fastq`.
-All processed data from a pipeline should be copied to `data/processed` folder.
+Login to danhead and run command:
 
 ```bash
-rsync -avzh --progress --chmod=2775 ~/ucph/ndir/SUN-CPR-genomics_data/... <ASSAY_ID>/raw/fastq
-```
-
-After copying all the files, please run the last command.
-
-```bash
-chmod -R 775 /maps/projects/dan1/data/Brickman/assays/<ASSAY_ID>
+create_assay
 ```
 
 ## Project
@@ -37,11 +25,7 @@ project and make your analysis easier.
 Please use the following naming convention: `surname-<YOUR_CODENAME>`
 
 ```bash
-module load miniconda/latest
-source activate brickman
-
-cd /home/$USER/Brickman/projects
-cruft create https://github.com/brickmanlab/ngs-template --directory="project"
+create_project
 ```
 
 Link required assays to your project.
@@ -50,7 +34,7 @@ Link required assays to your project.
 ln -s /maps/projects/dan1/data/Brickman/assays/<ASSAY_ID> /maps/projects/dan1/data/Brickman/projects/<PROJECT_ID>/data/assays/
 ```
 
-Link external data if needed
+Link **external data** if needed
 
 ```bash
 ln -s /maps/projects/dan1/data/Brickman/shared /maps/projects/dan1/data/Brickman/projects/<PROJECT_ID>/data/external/

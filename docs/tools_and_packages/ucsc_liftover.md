@@ -1,6 +1,6 @@
 # UCSC liftover tool
 
-[UCSC liftover](https://genome.ucsc.edu/cgi-bin/hgLiftOver)
+Documentation for [UCSC liftover](https://genome.ucsc.edu/cgi-bin/hgLiftOver).
 
 ## Issue: separate peaks map to same coordinates after liftover
 
@@ -8,9 +8,10 @@
 - This is because some contigs were not carried forward from hg19 to hg38, due to problems with the hg19 assembly that were resolved in hg38
 - All lifted over peaks with overlapping coordinates should be removed from analysis because the peaks were called on an uncertain region in the old genome assembly
 - Issues like this likely apply to all genome updates, not only human
-- The same issue also applies with [Ensembl assembly converter](https://www.ensembl.org/Homo_sapiens/Tools/AssemblyConverter) 
+- The same issue also applies with [Ensembl assembly converter](https://www.ensembl.org/Homo_sapiens/Tools/AssemblyConverter)
 
 ## Solution
+
 Remove any peaks with overlapping coordinates after liftover before using the lifted over peak file:
 
 ```bash

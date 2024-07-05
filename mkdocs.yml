@@ -16,10 +16,13 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  features:
+    - content.code.copy
 
 markdown_extensions:
   - admonition
   - footnotes
+  - def_list
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
