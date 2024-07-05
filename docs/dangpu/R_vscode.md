@@ -4,6 +4,8 @@ A solution to run R scripts on computing nodes dancmpn01fl and dancmpn02fl using
 
 This is much faster than the current RStudio solution, and frees up danGPU for those who actually need GPU resources :)
 
+The first time you use R in VScode you will likely have to re-install your R libraries
+
 ## code tunnel
 
 The VScode CLI can be used to set up a tunnel so that we can connect to an srun job on the compute node:
@@ -12,7 +14,6 @@ The VScode CLI can be used to set up a tunnel so that we can connect to an srun 
 ssh user@danhead01fl.unicph.domain
 tmux new-session
 srun -c 2 --mem=30gb --time=0-10:00:00 -w dancmpn02fl --pty bash
-source ~/.bash_profile
 module load vscode_cli gcc/11.2.0 R/4.3.1
 code tunnel
 ```
@@ -21,15 +22,15 @@ code tunnel
 - Open the link and enter the given code to authenticate
 - Chose your KU microsoft account and click continue
 - Open the link in your web browser and accept the connection
-- ALTERNATIVELY: Open your VScode desktop app, click `open a remote window` in bottom left corner, choose connect to tunnel > microsoft account > tunnel name and accept connection
+- **ALTERNATIVELY**: Open your VScode desktop app, click `open a remote window` in bottom left corner, choose connect to tunnel > microsoft account > tunnel name and accept connection
 - Go back to terminal and hit ENTER on questions about tunnel name
 - go to vsc > settings > Rterm:Linux and paste the following `/opt/software/R/4.3.1/bin/R`
 
-**Note:** in the VScode desktop app, file > preferences > settings > R, Rpath and Rterm should be left blank and uncheck "always use active terminal"
+**Note:** in the VScode desktop app, file > preferences > settings > R, uncheck "always use active terminal"
 
 **IMPORTANT!** When using `code tunnel` the connection between your local VScode instance and the compute node is bridged by a Microsoft server. This means `code tunnel` should not be used to work with sensitive human data. However, the connection is secured and authenticated using your Microsoft account and all data is encrypted during transit.
 
-## code-server
+## VScode code-server (deprecated)
 
 Currently running code-server only works on danGPU which is NOT what we want!
 
@@ -52,18 +53,18 @@ It is not possible to set up an ssh tunnel from dancmpn01fl/2 to danhead for the
 error listen EADDRINUSE: address already in use 127.0.0.1:8080
 ```
 
-## Downloads
+## Installation
 
 Do only once to make modules
 
-### VScode CLI
+**VScode CLI**
 
 ```bash
 curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
 tar -xf vscode_cli.tar.gz
 ```
 
-### VScode code-server
+**VScode code-server**
 
 ```bash
 curl -fL https://github.com/coder/code-server/releases/download/v4.90.2/code-server-4.90.2-linux-amd64.tar.gz | tar -C /maps/projects/dan1/data/Brickman/shared/modules/software/code-server/4.90.2 -xz
