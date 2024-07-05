@@ -1,0 +1,1644 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../0_setup/">
+      
+      
+        <link rel="next" href="../2_starting-assay-project/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Research Data Management Guidelines for NGS - Brickman Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#research-data-management-guidelines-for-ngs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Brickman Lab" class="md-header__button md-logo" aria-label="Brickman Lab" data-md-component="logo">
+      
+  <img src="/assets/BrickmanLab.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Brickman Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Research Data Management Guidelines for NGS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brickmanlab/brickmanlab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brickmanlab/brickmanlab.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Brickman Lab" class="md-nav__button md-logo" aria-label="Brickman Lab" data-md-component="logo">
+      
+  <img src="/assets/BrickmanLab.jpeg" alt="logo">
+
+    </a>
+    Brickman Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brickmanlab/brickmanlab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brickmanlab/brickmanlab.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First time on danserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Research Data Management Guidelines for NGS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Research Data Management Guidelines for NGS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-folder-structure-and-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Folder structure and organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Folder structure and organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Template engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-assay-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Assay folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Assay folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assay-id-code-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assay ID code names
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-project-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Project folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Project folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-synchronization-with-dangpu-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Synchronization with DanGPU server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-general-naming-conventions-and-more-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 General naming conventions and more info
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metadata-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Metadata and documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metadata and documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-assay-metadata-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Assay metadata fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-project-metadata-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Project metadata fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-catalogue-and-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Data catalogue and browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-projects-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Projects version control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-projects-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Projects GitHub pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-project-archiving-in-zenodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Project archiving in Zenodo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-data-upload-to-geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Data upload to GEO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-create-a-data-management-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Create a Data Management Plan
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_starting-assay-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting a new assay or project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda &amp; modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_vscode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup R with Visual Studio Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_handy-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handy scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/dropbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Dropbox to OneDrive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/ku-computer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KU computer setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/podman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Podman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools and packages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Tools and packages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_and_packages/alphafold2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alphafold 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_and_packages/dReg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dReg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_and_packages/packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bioinformatics tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_and_packages/ucsc_liftover/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UCSC liftover tool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-folder-structure-and-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Folder structure and organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Folder structure and organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Template engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-assay-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Assay folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Assay folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assay-id-code-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assay ID code names
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-project-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Project folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Project folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-synchronization-with-dangpu-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Synchronization with DanGPU server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-general-naming-conventions-and-more-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 General naming conventions and more info
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metadata-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Metadata and documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metadata and documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-assay-metadata-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Assay metadata fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-project-metadata-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Project metadata fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-catalogue-and-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Data catalogue and browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-projects-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Projects version control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-projects-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Projects GitHub pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-project-archiving-in-zenodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Project archiving in Zenodo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-data-upload-to-geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Data upload to GEO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-create-a-data-management-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Create a Data Management Plan
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="research-data-management-guidelines-for-ngs">Research Data Management Guidelines for NGS</h1>
+<p>This section provides guidelines for effective research data management within our lab. By adopting these guidelines, we aim to improve data organization and naming conventions, leading to enhanced data governance and research efficiency. The guidelines include the following steps:</p>
+<ol>
+<li>Adhere to folder structure and naming conventions for <code>Assays</code> and <code>Projects</code> folders.</li>
+<li>Add relevant metadata to a <code>metadata.yml</code> in each folder</li>
+<li>Create a database from metadata files in <code>Assays</code> and <code>Projects</code> folders and browse it with a <a href="https://panel.holoviz.org/">Panel python app</a>.</li>
+<li><code>Projects</code> folders will be version controlled with Github and the <a href="https://github.com/brickmanlab">Brickman organization</a>.</li>
+<li><code>Projects</code> reports will be displayed under the <a href="https://gbrickmanlab.github.io">Brickman organization GitHub Pages</a>.</li>
+<li><code>Projects</code> will be syncronized and archived in <a href="https://zenodo.org/">Zenodo</a>, which will give a DOI that can be used in a publication.</li>
+<li>NGS <code>Assays</code> folder will be uploaded to GEO, with the information provided in the metadata file.</li>
+<li>Create a Data Management Plan template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a></li>
+</ol>
+<h2 id="1-folder-structure-and-organization">1. Folder structure and organization</h2>
+<p>To ensure efficient data management, it is important to establish a consistent approach to organizing research data. We consider the following practices:</p>
+<ul>
+<li>Folder structure: we aim to a logical and intuitive folder structure that reflects the organization of research projects and experimental data. We use descriptive folder names to make it easy to locate and access specific data files.</li>
+<li>Subfolders: Use subfolders to further categorize data based on their contents, such as code notebooks, results, reports, etc. This helps to keep data organized and facilitates quick retrieval.</li>
+<li>File naming conventions: implement a standardized file naming convention to ensure consistency and clarity. Use descriptive names that include relevant information, such as type of plots, results tables, etc.</li>
+</ul>
+<h3 id="11-template-engine">1.1 Template engine</h3>
+<p>We are currently using a <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>
+template to generate a <a href="https://github.com/brickmanlab/ngs-template">folder structure</a>.
+Use <a href="https://github.com/cruft/cruft">cruft</a> when generating assay and project folders to
+allow us to validate and sync old templates with the latest version.</p>
+<p>See <a href="./starting-assay-project.md">this section</a> to get started with a new project/assay.</p>
+<h3 id="12-assay-folder">1.2 Assay folder</h3>
+<p>For each NGS experiment there should be an <code>Assay</code> folder that will contain all experimental datasets (raw files and pipeline processed files).
+Inside <code>Assay</code> there will be subfolders named after a unique NGS ID and the date it was created:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;Assay-ID&gt;_YYYYMMDD
+</span></code></pre></div>
+<h4 id="assay-id-code-names">Assay ID code names</h4>
+<ul>
+<li><code>CHIP</code>: ChIP-seq</li>
+<li><code>RNA</code>: RNA-seq</li>
+<li><code>ATAC</code>: ATAC-seq</li>
+<li><code>SCR</code>: scRNA-seq</li>
+<li><code>PROT</code>: Mass Spectrometry Assay</li>
+<li><code>CAT</code>: Cut&amp;Tag</li>
+<li><code>CAR</code>: Cut&amp;Run</li>
+<li><code>RIME</code>: Rapid Immunoprecipitation Mass spectrometry of Endogenous proteins</li>
+</ul>
+<!-- **Note:** we do not know much about proteomics and mass spec data, neither imaging data.  -->
+
+<p>For example <code>CHIP_20230101</code> is a ChIPseq assay made on 1st January 2023.</p>
+<h4 id="folder-structure">Folder Structure</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CHIP_20230424
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├──<span class="w"> </span>description.yaml
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├──<span class="w"> </span>metadata.yaml
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├──<span class="w"> </span>pipeline.md
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├──<span class="w"> </span>processed
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>└──<span class="w"> </span>raw
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">   </span>├──<span class="w"> </span>.fastq.gz
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">   </span>└──<span class="w"> </span>samplesheet.csv
+</span></code></pre></div>
+<ul>
+<li><strong>description.yaml</strong>: short and long descriptions of the assay in yaml format.</li>
+<li><strong>metadata.yaml</strong>: metadata file for the assay describing different keys (<a href="#21-assay-metadata-fields">see below</a>).</li>
+<li><strong>pipeline.md</strong>: description of the pipeline used to process raw data.</li>
+<li><strong>processed</strong>: folder with results of the preprocessing pipeline. Contents depend on the pipeline used.</li>
+<li><strong>raw</strong>: folder with the raw data.<ul>
+<li><em>.fastq.gz</em>:In the case of NGS assays, there should be fastq files.</li>
+<li><em>samplesheet.csv</em>: file that contains metadata information for the samples. This file is used to run the nf-core pipelines. Ideally, it will also contain a column with info regarding the experimental variables and batches so it can be used for down stream analysis as well.</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-project-folder">1.3 Project folder</h3>
+<p>There should be another folder called <code>Projects</code> that will contain project information and data analysis.</p>
+<p>A project may use one or more assays to answer a scientific question. This should be, for example, all the data analysis related
+to a publication.</p>
+<p>The project folder should be named after a unique identifier, such as:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;Project-ID&gt;_YYYYMMDD
+</span></code></pre></div>
+<p><code>&lt;Project-ID&gt;</code> should be the initials of the owner of the project folder and the publication year, e.g. <code>JARH_et_al_20230101</code>.</p>
+<h4 id="folder-structure_1"><strong>Folder structure</strong></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;Project-ID&gt;_20230424
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>data
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│<span class="w">  </span>├──<span class="w"> </span>assays
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│<span class="w">  </span>├──<span class="w"> </span>external
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│<span class="w">  </span>└──<span class="w"> </span>processed
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├──<span class="w"> </span>documents
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│<span class="w">  </span>└──<span class="w"> </span>Non-sensitive_NGS_research_project_template.docx
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├──<span class="w"> </span>notebooks
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis.rmd
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├──<span class="w"> </span>README.md
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├──<span class="w"> </span>reports
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│<span class="w">  </span>├──<span class="w"> </span>figures
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│<span class="w">  </span>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis.html
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>├──<span class="w"> </span>requirements.txt
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>├──<span class="w"> </span>results
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│<span class="w">  </span>└──<span class="w"> </span>01_data_analysis/
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>├──<span class="w"> </span>scripts
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>├──<span class="w"> </span>description.yml
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>└──<span class="w"> </span>metadata.yml
+</span></code></pre></div>
+<ul>
+<li><strong>data</strong>: folder that contains symlinks or shortcuts to where the data is, avoiding copying and modification of original files.</li>
+<li><strong>documents</strong>: folder containing word documents, slides or pdfs related to the project, such as explanations of the data or project, papers, etc. It also contains your <a href="#8-create-a-data-management-plan">Data Management Plan</a>.<ul>
+<li><em>Non-sensitive_NGS_research_project_template.docx</em>. This is a prefilled Data Management Plan based on the Horizon Europe guidelines.</li>
+</ul>
+</li>
+<li><strong>notebooks</strong>: folder containing Jupyter, R markdown or Quarto notebooks with the actual data analysis. Using annotated notebooks is ideal for reproducibility and readability purposes. Notebooks should be labeled numerically in order they were created e.g. <code>00_preprocessing</code></li>
+<li><strong>README.md</strong>: detailed description of the project in markdown format.</li>
+<li><strong>reports</strong>: notebooks rendered as html/docx/pdf versions, ideal for sharing with colleagues and also as a formal report of the data analysis procedure.<ul>
+<li><em>figures</em>: figures produced upon rendering notebooks. The figures will be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which figures.</li>
+</ul>
+</li>
+<li><strong>results</strong>: results from the data analysis, such as tables with differentially expressed genes, enrichment results, etc. These results should be saved under a subfolder named after the notebook that created them. This is for provenance purposes so we know which notebook created which results.</li>
+<li><strong>scripts</strong>: folder containing helper scripts needed to run data analysis or reproduce the work of the folder</li>
+<li><strong>description.yml</strong>: short description of the project.</li>
+<li><strong>metadata.yml</strong>: metadata file for the assay describing different keys (<a href="#22-project-metadata-fields">see below</a>).</li>
+</ul>
+<!-- **Note**: maybe we can make an environment folder or put inside the scripts folder a Dockerfile that should give you an environment where you can reproduce the results of the folder? -->
+
+<!-- **Note2**: shouldn't there be also a project_metadata.yaml here as well? also a project_description.yaml too? -->
+
+<h3 id="14-synchronization-with-dangpu-server">1.4 Synchronization with DanGPU server</h3>
+<p>We will have to setup a cron job to perform one-way sync between the <code>/projects</code>
+folder and <code>NGS_data</code> folder. All the analysis will be done on danGPU server,
+with <strong>no exceptions</strong>!</p>
+<p>After project is done and published, it will be moved to <code>NGS_data</code>.</p>
+<h3 id="15-general-naming-conventions-and-more-info">1.5 General naming conventions and more info</h3>
+<ul>
+<li>date format: <code>YYYYMMDD</code></li>
+<li>authors: initials</li>
+<li>file and folder names: <strong>No use of spaces</strong>. Field sections are separated by underscores <code>_</code>. Words in each section are written in camelCase. For example: <code>field1_word1Word2.txt</code>.</li>
+</ul>
+<p><a href="https://faircookbook.elixir-europe.org/content/recipes/interoperability/transcriptomics-metadata.html#analysis-metadata">Transcriptomics metadata standards and fields</a></p>
+<p>More info on naming conventions for different types of files and analysis is in development.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">naming_convention</th>
+<th style="text-align: left;">file format</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">.fastq</td>
+<td style="text-align: left;">raw sequencing reads</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">sampleID_run_read1.fastq</td>
+</tr>
+<tr>
+<td style="text-align: left;">.fastqc</td>
+<td style="text-align: left;">quality control from fastqc</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">sampleID_run_read1.fastqc</td>
+</tr>
+<tr>
+<td style="text-align: left;">.bam</td>
+<td style="text-align: left;">aligned reads</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">sampleID_run_read1.bam</td>
+</tr>
+<tr>
+<td style="text-align: left;">GTF</td>
+<td style="text-align: left;">sequence annotation</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td style="text-align: left;">GFF</td>
+<td style="text-align: left;">sequence annotation</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td style="text-align: left;">.bed</td>
+<td style="text-align: left;">genome locations</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">.bigwig</td>
+<td style="text-align: left;">genome coverage</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">.fasta</td>
+<td style="text-align: left;">sequence data (nucleotide/aminoacid)</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">one of https://www.gencodegenes.org/</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiqc report</td>
+<td style="text-align: left;">QC aggregated report</td>
+<td style="text-align: left;">&lt;assayID&gt;_YYYYMMDD.multiqc</td>
+<td style="text-align: left;">multiqc</td>
+<td style="text-align: left;">RNA_20200101.multiqc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Count matrix</td>
+<td style="text-align: left;">final count matrix</td>
+<td style="text-align: left;">&lt;assayID&gt;_cm_aligner_YYYYMMDD.tsv</td>
+<td style="text-align: left;">tsv</td>
+<td style="text-align: left;">RNA_cm_salmon_20200101.tsv</td>
+</tr>
+<tr>
+<td style="text-align: left;">DEA</td>
+<td style="text-align: left;">differential expression analysis results</td>
+<td style="text-align: left;">DEA_&lt;condition1-condition2&gt;_LFC&lt;absolute_threshold&gt;_p&lt;pvalue decimals&gt;_YYYYMMDD.tsv</td>
+<td style="text-align: left;">tsv</td>
+<td style="text-align: left;">DEA_treat-untreat_LFC1_p01_20200101.tsv</td>
+</tr>
+<tr>
+<td style="text-align: left;">DBA</td>
+<td style="text-align: left;">differential binding analysis results</td>
+<td style="text-align: left;">DBA_&lt;condition1-condition2&gt;_LFC&lt;absolute_threshold&gt;_p&lt;pvalue decimals&gt;_YYYYMMDD.tsv</td>
+<td style="text-align: left;">tsv</td>
+<td style="text-align: left;">DBA_treat-untreat_LFC1_p01_20200101.tsv</td>
+</tr>
+<tr>
+<td style="text-align: left;">MAplot</td>
+<td style="text-align: left;">MA plot</td>
+<td style="text-align: left;">MAplot_&lt;condition1-condition2&gt;_YYYYMMDD.jpeg</td>
+<td style="text-align: left;">jpeg</td>
+<td style="text-align: left;">MAplot_treat-untreat_20200101.jpeg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heatmap plot</td>
+<td style="text-align: left;">Heatmap plot of anything</td>
+<td style="text-align: left;">heatmap_&lt;type&gt;_YYYYMMDD.jpeg</td>
+<td style="text-align: left;">jpeg</td>
+<td style="text-align: left;">Heatmap_sampleCor_20200101.jpeg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volcano plot</td>
+<td style="text-align: left;">Volcano plot</td>
+<td style="text-align: left;">volcano_&lt;condition1-condition2&gt;_YYYYMMDD.jpeg</td>
+<td style="text-align: left;">jpeg</td>
+<td style="text-align: left;">volcano_treat-untreat_20200101.jpeg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Venn diagram</td>
+<td style="text-align: left;">Venn diagram</td>
+<td style="text-align: left;">venn_&lt;type&gt;_YYYYMMDD.jpeg</td>
+<td style="text-align: left;">jpeg</td>
+<td style="text-align: left;">venn_consensus_20200101.jpeg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enrichment table</td>
+<td style="text-align: left;">Enrichment results</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">tsv</td>
+<td style="text-align: left;">nan</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-metadata-and-documentation">2. Metadata and documentation</h2>
+<p>Accurate documentation and metadata play a crucial role in facilitating data discovery and interpretation. Consider the following guidelines:</p>
+<ul>
+<li>Metadata capture: Record essential metadata for each dataset, including type of experiment, date, organisms, etc. This information provides context and helps others understand and reuse the data effectively.</li>
+<li>Readme files: Create readme files for each project or dataset. These files should provide a brief overview of the project, list the files and their descriptions, and explain any specific instructions or dependencies required for data analysis.</li>
+</ul>
+<h3 id="21-assay-metadata-fields">2.1 Assay metadata fields</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metadata field</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assay_id</td>
+<td style="text-align: left;">Identifier for the assay</td>
+<td style="text-align: left;">&lt;assay&gt;_&lt;codename&gt;_YYYYMMDD</td>
+<td style="text-align: left;">CHIP_Oct4_20200101</td>
+</tr>
+<tr>
+<td style="text-align: left;">assay</td>
+<td style="text-align: left;">What kind of NGS was used in your experiment?</td>
+<td style="text-align: left;">["CHIP", "RNA", "ATAC", "SCR", "PROT", "CAT", "CAR", "RIME", "TAP"]</td>
+<td style="text-align: left;">ChIPseq</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">Who performed the experiment?</td>
+<td style="text-align: left;">&lt;First Name&gt; &lt;Last Name&gt;</td>
+<td style="text-align: left;">Jose Romero</td>
+</tr>
+<tr>
+<td style="text-align: left;">date</td>
+<td style="text-align: left;">Date of sequencing, should be the same as defined by Genomics Platform in YYYYMMDD format!</td>
+<td style="text-align: left;">YYYYMMDD</td>
+<td style="text-align: left;">20200101</td>
+</tr>
+<tr>
+<td style="text-align: left;">codename</td>
+<td style="text-align: left;">Your name initials [Example: JB for Josh Brickman]</td>
+<td style="text-align: left;">&lt;Initials OR keyword&gt;</td>
+<td style="text-align: left;">JR</td>
+</tr>
+<tr>
+<td style="text-align: left;">eln_id</td>
+<td style="text-align: left;">Optional: Electronic lab notebook ID</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">12345</td>
+</tr>
+<tr>
+<td style="text-align: left;">technology</td>
+<td style="text-align: left;">What technology was used? [Example: 10X Genomics if you used SCR]</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">10X genomics</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequencer</td>
+<td style="text-align: left;">What sequencing machine was used? [Example: NovaSeq 2000/NextSeq 2000/NextSeq 500]</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">NextSeq 2000</td>
+</tr>
+<tr>
+<td style="text-align: left;">seq_kit</td>
+<td style="text-align: left;">What sequencing kit did you use? Please provide product number if available</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">n_samples</td>
+<td style="text-align: left;">How many samples have been sequenced?</td>
+<td style="text-align: left;">&lt;integer&gt;</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">is_paired</td>
+<td style="text-align: left;">Paired fastq files or not</td>
+<td style="text-align: left;">&lt;single-end OR paired-end&gt;</td>
+<td style="text-align: left;">single-end</td>
+</tr>
+<tr>
+<td style="text-align: left;">pipeline</td>
+<td style="text-align: left;">Pipeline name [Example: nf-core/rnaseq 3.12.0 or custom]</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">nf-core/chipseq -r 1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">processed_by</td>
+<td style="text-align: left;">Person responsible for pre-processing (pipeline execution)</td>
+<td style="text-align: left;">&lt;First Name&gt; &lt;Last Name&gt;</td>
+<td style="text-align: left;">Sarah Lundregan</td>
+</tr>
+<tr>
+<td style="text-align: left;">organism</td>
+<td style="text-align: left;">What organism is this?</td>
+<td style="text-align: left;">&lt;mouse OR human OR other&gt;</td>
+<td style="text-align: left;">mouse</td>
+</tr>
+<tr>
+<td style="text-align: left;">organism_version</td>
+<td style="text-align: left;">Which version of genome was used [Example: mm10, hg38]</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">mm10</td>
+</tr>
+<tr>
+<td style="text-align: left;">organism_subgroup</td>
+<td style="text-align: left;">In vitro or in vivo?</td>
+<td style="text-align: left;">&lt;in vivo OR in vitro&gt;</td>
+<td style="text-align: left;">in vitro</td>
+</tr>
+<tr>
+<td style="text-align: left;">origin</td>
+<td style="text-align: left;">Is this internal experiment of external (collaborator/publication)?</td>
+<td style="text-align: left;">&lt;internal OR external&gt;</td>
+<td style="text-align: left;">internal</td>
+</tr>
+<tr>
+<td style="text-align: left;">note</td>
+<td style="text-align: left;">Optional: Was there something worth knowing?</td>
+<td style="text-align: left;">Free text</td>
+<td style="text-align: left;">Low quality experiment/Indexes are swapped ...</td>
+</tr>
+<tr>
+<td style="text-align: left;">genomics_path</td>
+<td style="text-align: left;">Path to where the data is</td>
+<td style="text-align: left;">&lt;/path/to/file&gt;</td>
+<td style="text-align: left;">smb:/path/to/file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-project-metadata-fields">2.2 Project metadata fields</h3>
+<p>In development.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metadata field</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">project</td>
+<td style="text-align: left;">Project name</td>
+<td style="text-align: left;">&lt;name&gt;_&lt;keyword&gt;_YYYY</td>
+<td style="text-align: left;">lundregan_oct4_2023</td>
+</tr>
+<tr>
+<td style="text-align: left;">author</td>
+<td style="text-align: left;">Owner of the project</td>
+<td style="text-align: left;">&lt;First name&gt; &lt;Surname&gt;</td>
+<td style="text-align: left;">Sarah Lundregran</td>
+</tr>
+<tr>
+<td style="text-align: left;">date</td>
+<td style="text-align: left;">Date of creation</td>
+<td style="text-align: left;">YYYYMMDD</td>
+<td style="text-align: left;">20230101</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">Short description of the project</td>
+<td style="text-align: left;">Plain text</td>
+<td style="text-align: left;">This is a project describing the effect of Oct4 perturbation after pERK activation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-data-catalogue-and-browser">3. Data catalogue and browser</h2>
+<p>@SLundregan is in the process of building a prototype for <code>Assay</code>, using the metadata contained in all <code>description.yml</code> and <code>metadata.yml</code> files in the assay folder.
+This will be in the form of an SQLite database that that is easily updatable by running a helper script.</p>
+<p>@SLundregan is also working on a browsable database using <a href="https://panel.holoviz.org/">Panel python app</a>.
+The app will display the latest version of the SQLite database. Clicking on an item from the database
+will open a tab containing all available metadata for the assay.</p>
+<p>Also, it would be nice if you can create an <code>Assay</code> folder directly from there,
+making it easy to fill up the info for the metadata and GEO submission (<a href="#8-data-upload-to-geo">see below</a>)</p>
+<p>In the future, you could ideally visualize an analysed single cell RNAseq dataset by opening <a href="https://cirrocumulus.readthedocs.io/en/latest/">Cirrocumulus</a> session.</p>
+<h2 id="4-projects-version-control">4. <code>Projects</code> version control</h2>
+<p>All projects should be version controlled using GitHub under the <a href="https://github.com/brickmanlab/">Brickman organization</a>. After creating a cookiecutter template, initiate a git repository on the folder. The Git repository can stay private until it is ready for publication.</p>
+<h2 id="5-projects-github-pages">5. <code>Projects</code> GitHub pages</h2>
+<p>Using GitHub pages, it is possible to display your data analyses (or anything related to the project) inside the <code>Projects</code> folder so that they are open to the public in a html format.
+This is great for transparency and reproducibility purposes. This can be done after the paper has been made public (it is not possible to do with a private repository without paying).</p>
+<p><strong>Info on how this is done should be put here</strong></p>
+<h2 id="6-project-archiving-in-zenodo">6. <code>Project</code> archiving in Zenodo</h2>
+<p>Before submitting, link the repository to <a href="https://zenodo.org/">Zenodo</a> and then create a Git release. This release will be caught by Zenodo and will give you a DOI that you can submit along the manuscript.</p>
+<h2 id="7-data-upload-to-geo">7. Data upload to GEO</h2>
+<p>The raw data from NGS experiments will be uploaded to the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus (GEO)</a>.
+Whenever a new Assay folder is created, the data owner must fill up the required documentation and information needed to make the GEO submission as smooth as possible.</p>
+<!-- **Note**: Probably we should start using Annotare  https://www.ebi.ac.uk/fg/annotare/login/ -->
+
+<h2 id="8-create-a-data-management-plan">8. Create a Data Management Plan</h2>
+<div class="admonition quote">
+<p class="admonition-title">From the University of Copenhagen RDM team</p>
+<p>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​A Data Management Plan (DMP) is a planning tool that helps researchers to establish good practices for working with physical m​aterial and data in a research project. A DMP covers all relevant aspects of research data management throughout the project.
+Writing a DMP early on in a project helps:</p>
+<ul>
+<li>identify potential issues with the management of research data.</li>
+<li>comply with relevant legislation, policies, and funder requirements.</li>
+<li>document agreements related to the collection, usage, and dissemination of research data between project partners or between student and supervisor.</li>
+</ul>
+</div>
+<p>We are have written a DMP template that it is prefilled with repetitive information using <a href="https://dmponline.deic.dk/">DMPonline</a> and the Horizon Europe guidelines. This template contains all the necessary information regarding common practices that we will use, the repositories we use for NGS, etc. The template is part of the <code>project</code> folder template, under <code>documents</code>. You can check the file <a href="https://github.com/brickmanlab/ngs-template/blob/master/project/%7B%7B%20cookiecutter.project%20%7D%7D/documents/Non-sensitive_NGS_research_project_template.docx">here</a>.</p>
+<p>The Horizon Europe template is mostly focused on digital data and so, it is maybe not the best option regarding the needs of the Brickman Lab, due to the fact that it is mostly a wet lab with some bioinformatics. We will start working on another DMP based on the KU template, which is designed for both physical and digital data.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 18, 2023</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
