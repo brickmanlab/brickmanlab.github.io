@@ -13,7 +13,7 @@ ssh user@danhead01fl.unicph.domain
 tmux new-session
 srun -c 2 --mem=30gb --time=0-10:00:00 -w dancmpn02fl --pty bash
 source ~/.bash_profile
-module load vscode_cli
+module load vscode_cli gcc/11.2.0 R/4.3.1
 code tunnel
 ```
 
