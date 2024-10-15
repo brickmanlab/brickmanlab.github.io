@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -883,7 +883,7 @@ alternative it is. Also, VSCode has a bunch of plugins.</p>
 <h2 id="setting-up-remote-tunnels">Setting up Remote Tunnels</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In this example we use version <strong>R/4.3.1</strong>. If you want to use a different one
+<p>In this example we use version <strong>R/4.2.1</strong>. If you want to use a different one
 change the R version!</p>
 </div>
 <h3 id="requirements">Requirements</h3>
@@ -896,7 +896,7 @@ change the R version!</p>
 <li>Login to head node: <code>ssh $USER@danhead01fl.unicph.domain</code></li>
 <li>Start a new tmux session: <code>tmux new -s rstudio</code></li>
 <li>Start a new job: <code>srun -c 2 --mem=30gb --time=0-4:00:00 --pty bash</code></li>
-<li>Load modules: <code>module load vscode_cli gcc/11.2.0 R/4.3.1 miniconda/latest</code></li>
+<li>Load modules: <code>module load vscode_cli gcc/11.2.0 R/4.2.1 quarto</code></li>
 <li>Run command: <code>code tunnel</code><ol>
 <li>Choose <code>Microsoft account</code> when asked how you would like to log in to VScode</li>
 <li>Open the link from terminal and paste the <strong>CODE</strong></li>
@@ -912,6 +912,7 @@ change the R version!</p>
 </ol>
 </li>
 <li>Move cursor on it and click the <code>-&gt;</code></li>
+<li>Install extension <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server">Remote Tunnels</a></li>
 </ol>
 <p>To use <code>R</code>, install additional packages by clicking <code>Extensions</code> in the left panel.
 Search for packages:</p>
@@ -944,7 +945,7 @@ to do.</p>
 <li>Login to head node: <code>ssh $USER@danhead01fl.unicph.domain</code></li>
 <li>Start a new tmux session: <code>tmux new -s rstudio</code></li>
 <li>Start a new job: <code>srun -c 2 --mem=30gb --time=0-4:00:00 --pty bash</code></li>
-<li>Load modules: <code>module load vscode_cli gcc/11.2.0 R/4.3.1 miniconda/latest</code></li>
+<li>Load modules: <code>module load vscode_cli gcc/11.2.0 R/4.2.1 quarto</code></li>
 <li>Run command: <code>code tunnel</code></li>
 <li>Go to your VSCode and on the left panel search for <code>Remote Explorer</code></li>
 <li>Click <code>dancmpn01flunicphdom</code> or <code>dancmpn02flunicphdom</code></li>
@@ -996,7 +997,7 @@ accessing it via a web browser using reverse <code>ssh</code> tunnel.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2024</span>
   </span>
 
     
