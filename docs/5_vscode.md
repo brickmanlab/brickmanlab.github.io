@@ -17,7 +17,7 @@ so you can use it on `dancmpn01fl` and `dancmpn02fl` computing nodes.
 
 !!! warning
 
-    In this example we use version **R/4.3.1**. If you want to use a different one
+    In this example we use version **R/4.2.1**. If you want to use a different one
     change the R version!
 
 ### Requirements
@@ -30,7 +30,7 @@ so you can use it on `dancmpn01fl` and `dancmpn02fl` computing nodes.
 1. Login to head node: `ssh $USER@danhead01fl.unicph.domain`
 2. Start a new tmux session: `tmux new -s rstudio`
 3. Start a new job: `srun -c 2 --mem=30gb --time=0-4:00:00 --pty bash`
-4. Load modules: `module load vscode_cli gcc/11.2.0 R/4.3.1 miniconda/latest`
+4. Load modules: `module load vscode_cli gcc/11.2.0 R/4.2.1 quarto`
 5. Run command: `code tunnel`
     1. Choose `Microsoft account` when asked how you would like to log in to VScode
     2. Open the link from terminal and paste the **CODE**
@@ -42,6 +42,8 @@ so you can use it on `dancmpn01fl` and `dancmpn02fl` computing nodes.
 7. Click `Sign in to the tunnels registered with Microsoft`
     1. You should see `dancmpn01flunicphdom` or `dancmpn02flunicphdom`
 8. Move cursor on it and click the `->`
+9. Install extension [Remote Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server)
+
 
 To use `R`, install additional packages by clicking `Extensions` in the left panel.
 Search for packages:
@@ -69,7 +71,7 @@ to do.
 1. Login to head node: `ssh $USER@danhead01fl.unicph.domain`
 2. Start a new tmux session: `tmux new -s rstudio`
 3. Start a new job: `srun -c 2 --mem=30gb --time=0-4:00:00 --pty bash`
-4. Load modules: `module load vscode_cli gcc/11.2.0 R/4.3.1 miniconda/latest`
+4. Load modules: `module load vscode_cli gcc/11.2.0 R/4.2.1 quarto`
 5. Run command: `code tunnel`
 6. Go to your VSCode and on the left panel search for `Remote Explorer`
 7. Click `dancmpn01flunicphdom` or `dancmpn02flunicphdom`
