@@ -26,7 +26,7 @@ template to generate a [folder structure](https://github.com/brickmanlab/ngs-tem
 Use [cruft](https://github.com/cruft/cruft) when generating assay and project folders to
 allow us to validate and sync old templates with the latest version.
 
-See [this section](./starting-assay-project.md) to get started with a new project/assay.
+See [this section](./2_starting-assay-project.md) to get started with a new project/assay.
 
 ### 1.2 Assay folder
 
