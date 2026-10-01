@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -536,6 +536,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experimental/1_conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building environments with conda, uv and mamba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1002,7 +1030,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>module<span class="w"> </span>load<span class="w"> </span>bedtools
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">EXTL</span><span class="o">=(</span><span class="s2">&quot;../data/external/&quot;</span><span class="o">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">EXTL</span><span class="o">=(</span><span class="s2">"../data/external/"</span><span class="o">)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Sort the lifted over peakfile for use with bedtools</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sort<span class="w"> </span>-k1,1<span class="w"> </span>-k2,2n<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>wong_fig3c_peaks_GRCh38.bed<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>peaks.tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>peaks.tmp<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>wong_fig3c_peaks_GRCh38.bed
@@ -1011,7 +1039,7 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>bedtools<span class="w"> </span>merge<span class="w"> </span>-i<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>wong_fig3c_peaks_GRCh38.bed<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>count<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>counted.bed
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Get non-overlapping peaks</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>awk<span class="w"> </span><span class="s1">&#39;/\t1$/{print}&#39;</span><span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>counted.bed<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>filtered.bed
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>awk<span class="w"> </span><span class="s1">'/\t1$/{print}'</span><span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>counted.bed<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>filtered.bed
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Intersect original file with non-overlapping peaks and output overlapping peaks</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>bedtools<span class="w"> </span>intersect<span class="w"> </span>-wa<span class="w"> </span>-a<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>wong_fig3c_peaks_GRCh38.bed<span class="w"> </span>-b<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>filtered.bed<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">EXTL</span><span class="si">}</span>wong_fig3c_peaks_GRCh38_correct_liftover.bed
@@ -1101,7 +1129,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

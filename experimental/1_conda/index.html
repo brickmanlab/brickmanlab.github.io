@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../experimental/1_conda/">
+        <link rel="prev" href="../0_R_singularity/">
       
       
-        <link rel="next" href="../ku-computer/">
+        <link rel="next" href="../../miscellaneous/dropbox/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Moving Dropbox to SUND - Brickman Lab</title>
+        <title>Building environments with conda, uv and mamba - Brickman Lab</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moving-dropbox-to-sund" class="md-skip">
+        <a href="#building-environments-with-conda-uv-and-mamba" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Moving Dropbox to SUND
+              Building environments with conda, uv and mamba
             
           </span>
         </div>
@@ -467,18 +467,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -499,7 +501,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -517,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../experimental/0_R_singularity/" class="md-nav__link">
+      <a href="../0_R_singularity/" class="md-nav__link">
         
   
   
@@ -542,90 +544,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../experimental/1_conda/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Building environments with conda, uv and mamba
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Miscellaneous
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Miscellaneous
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
     
   
   
@@ -645,7 +563,7 @@
   <span class="md-ellipsis">
     
   
-    Moving Dropbox to SUND
+    Building environments with conda, uv and mamba
   
 
     
@@ -663,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Moving Dropbox to SUND
+    Building environments with conda, uv and mamba
   
 
     
@@ -689,22 +607,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linking-remotes" class="md-nav__link">
+  <a href="#conda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linking remotes
+        Conda
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Linking remotes">
+    <nav class="md-nav" aria-label="Conda">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dropbox" class="md-nav__link">
+  <a href="#creating-own-shared-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dropbox
+        Creating own shared environment
       
     </span>
   </a>
@@ -712,10 +630,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#onedrive" class="md-nav__link">
+  <a href="#install-packages-from-pypi-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Onedrive
+        Install packages from PyPi with uv
       
     </span>
   </a>
@@ -723,10 +641,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#test-connections" class="md-nav__link">
+  <a href="#install-packages-from-bioconda-using-mamba" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test connections
+        Install packages from bioconda using mamba
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-environmentyml-from-your-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an environment.yml from your conda environment
       
     </span>
   </a>
@@ -735,17 +664,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Copy files
-      
-    </span>
-  </a>
   
 </li>
       
@@ -758,6 +676,60 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Miscellaneous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -765,7 +737,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../ku-computer/" class="md-nav__link">
+      <a href="../../miscellaneous/dropbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moving Dropbox to SUND
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous/ku-computer/" class="md-nav__link">
         
   
   
@@ -793,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../podman/" class="md-nav__link">
+      <a href="../../miscellaneous/podman/" class="md-nav__link">
         
   
   
@@ -1014,22 +1014,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linking-remotes" class="md-nav__link">
+  <a href="#conda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linking remotes
+        Conda
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Linking remotes">
+    <nav class="md-nav" aria-label="Conda">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dropbox" class="md-nav__link">
+  <a href="#creating-own-shared-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dropbox
+        Creating own shared environment
       
     </span>
   </a>
@@ -1037,10 +1037,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#onedrive" class="md-nav__link">
+  <a href="#install-packages-from-pypi-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Onedrive
+        Install packages from PyPi with uv
       
     </span>
   </a>
@@ -1048,10 +1048,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#test-connections" class="md-nav__link">
+  <a href="#install-packages-from-bioconda-using-mamba" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test connections
+        Install packages from bioconda using mamba
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-environmentyml-from-your-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an environment.yml from your conda environment
       
     </span>
   </a>
@@ -1060,17 +1071,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Copy files
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1094,70 +1094,35 @@
   
 
 
-<h1 id="moving-dropbox-to-sund">Moving Dropbox to SUND</h1>
-<p>This is a step-by-step guide how I moved our Dropbox into SUND organized
-by KU IT. In first attempt I have tried moving the files into OneDrive, but
-because there might be issues with long filenames I eventually ran into more and
-more problems</p>
+<h1 id="building-environments-with-conda-uv-and-mamba">Building environments with conda, uv and mamba</h1>
+<p>This experimental workflow uses <code>conda</code> to create environments and <code>uv</code> and <code>mamba</code> to install and solve environment packages</p>
+<h2 id="conda">Conda</h2>
+<p>We have shared <code>conda</code> environments to simplify your life.</p>
 <ul>
-<li>random errors, because of different file size</li>
-<li>path name too long</li>
+<li>To list all available envs: <code>conda env list</code></li>
+<li>To activate env: <code>source activate brickman</code></li>
 </ul>
-<p>Simpler solution is just to move things to SAMBA drives.</p>
-<p>First, ssh into the server</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>danhead01fl
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>dropbox-transfer
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>module<span class="w"> </span>load<span class="w"> </span>rclone/1.65.1
+<h3 id="creating-own-shared-environment">Creating own shared environment</h3>
+<p>To create a shared environment and make it writable by everyone:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>load<span class="w"> </span>miniconda/latest<span class="w"> </span>uv/latest
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="w"> </span>/maps/projects/dan1/data/Brickman/conda/envs/<span class="si">${</span><span class="nv">NAME_OF_YOUR_ENV</span><span class="si">}</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="si">${</span><span class="nv">VERSION_OF_PYTHON</span><span class="si">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span><span class="si">${</span><span class="nv">NAME_OF_YOUR_ENV</span><span class="si">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/maps/projects/dan1/data/Brickman/conda/envs/brickman/<span class="si">${</span><span class="nv">NAME_OF_YOUR_ENV</span><span class="si">}</span>
 </span></code></pre></div>
-<h2 id="linking-remotes">Linking remotes</h2>
-<h3 id="dropbox">Dropbox</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt; n
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&gt; dropbox
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&gt; client_id &lt;ENTER&gt;
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&gt; client_secret &lt;ENTER&gt;
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&gt; y
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>forward port `ssh -fNL localhost:53682:localhost:53682 danhead01fl` and access the website locally
+<h3 id="install-packages-from-pypi-with-uv">Install packages from PyPi with uv</h3>
+<p><a href="https://docs.astral.sh/uv/pip/packages/">Documentation for uv</a></p>
+<p>While in the created environment, install packages with the command</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>packages<span class="o">]</span>
 </span></code></pre></div>
-<h3 id="onedrive">Onedrive</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&gt; n
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&gt; onedrive
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&gt; client_id &lt;ENTER&gt;
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&gt; client_secret &lt;ENTER&gt;
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&gt; region &lt;ENTER&gt;
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>&gt; y
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>forward port `ssh -fNL localhost:53682:localhost:53682 danhead01fl` and access the website locally
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>&gt; config_type 3
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&gt; https://alumni.sharepoint.com/sites/UCPH_BrickmanLab
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>&gt; y
+<h3 id="install-packages-from-bioconda-using-mamba">Install packages from bioconda using mamba</h3>
+<p>For packages in bioconda, use <code>mamba</code></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mamba<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>packages<span class="o">]</span>
 </span></code></pre></div>
-<h3 id="test-connections">Test connections</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>lsd<span class="w"> </span>Dropbox:
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>rclone<span class="w"> </span>lsd<span class="w"> </span>dropbox_jb:
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>rclone<span class="w"> </span>lsd<span class="w"> </span>Onedrive:
-</span></code></pre></div>
-<h2 id="copy-files">Copy files</h2>
-<p>I have started first with manual folders because we had to many folders and sometimes
-there are timeout issues.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Computerome<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Computerome
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Courses<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Courses
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Grants<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Grants
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Other<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Other
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Papers<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Papers
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:Pictures<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/Pictures
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:People<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/People
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:sc_seq_analysis<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/sc_seq_analysis
-</span></code></pre></div>
-<p>After the initial copy, I ran again copy this time of all the folders, most of
-them should be present already. This is to make sure all files were moved.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>--progress<span class="w"> </span>--checksum<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>--exclude<span class="o">=</span><span class="s2">"People/Fung/Home/IRCMS_interview_2024**"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>--exclude<span class="o">=</span><span class="s2">"People/Fung/Home/MB1016613_backup**"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>--exclude<span class="o">=</span><span class="s2">"GEO_data/**"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>Dropbox:<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>Dropbox:GEO_data<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/GEO_data/
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--checksum<span class="w"> </span>dropbox_jb:<span class="w"> </span>~/ucph/ndir/SUN-RENEW-Brickman/Dropbox/JoshBrickman
+<h3 id="create-an-environmentyml-from-your-conda-environment">Create an environment.yml from your conda environment</h3>
+<p>When you are happy with the environment, create an environment.yml to make it portable</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--file<span class="o">={</span>NAME_OF_ENVIRONMENT<span class="o">}</span>.brickmanCondaEnv.yaml
 </span></code></pre></div>
 
 
@@ -1181,7 +1146,7 @@ them should be present already. This is to make sure all files were moved.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 3, 2024 08:05:06 UTC">October 3, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 1, 2026 17:27:27 UTC">October 1, 2026</span>
   </span>
 
     
@@ -1191,7 +1156,7 @@ them should be present already. This is to make sure all files were moved.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 2, 2024 06:19:11 UTC">July 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 1, 2026 17:27:27 UTC">October 1, 2026</span>
   </span>
 
     
